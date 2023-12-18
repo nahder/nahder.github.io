@@ -150,7 +150,7 @@
 }
 
 .grid__item {
-  margin-bottom: 2em;
+  margin-bottom: .1em;
 
   // You can remove the small breakpoint styling if you only want to start with 3 items per row at the medium breakpoint
   @include breakpoint($small) {
@@ -234,7 +234,7 @@
     }
 
     @include breakpoint($medium) {
-      max-height: 275px;
+      max-height: 210px;
     }
   }
 
