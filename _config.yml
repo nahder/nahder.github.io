@@ -13,14 +13,12 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: Nader Ahmed's Portfolio
+email: nahmed5150@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Graduate student in robotics at Northwestern University.
 twitter_username: username
-github_username: username
+github_username: nahder
 minimal_mistakes_skin: neon
 search: true
 
@@ -60,32 +58,38 @@ plugins:
 author:
   name   : "Nader Ahmed"
   avatar : "/assets/images/nader.jpg"
-  bio    : "Robotics engineer"
+  bio    : "Robotics engineer, currently pursuing MS at Northwestern University :)"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "Evanston, IL"
+      icon: "fas fa-map-pin" 
+      url: ""
+
+    - label: "Email"
+      icon: "fas fa-inbox"
+      url: "mailto:nahmed5150@gmail.com"
+
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/nahder"
+
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/naderahmed01/"
+
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "Email"
+      icon: "fas fa-inbox"
+      url: "mailto:nahmed5150@gmail.com"
+
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/nahder"
+
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/naderahmed01/"
 
 defaults:
   # _posts
