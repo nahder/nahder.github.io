@@ -150,10 +150,11 @@
 }
 
 .grid__item {
-  margin-bottom: .1em;
 
   // You can remove the small breakpoint styling if you only want to start with 3 items per row at the medium breakpoint
   @include breakpoint($small) {
+  margin-bottom: -2.0em;
+
     float: left;
     width: span(6 of 12); // 2 items per row on small screens (optional)
 
@@ -169,6 +170,8 @@
   }
 
   @include breakpoint($medium) {
+    margin-bottom: -2.0em;
+
     width: span(4 of 12); // Span 4 columns for 3 items per row
 
     &:nth-child(3n + 1) {
@@ -184,6 +187,8 @@
   }
 
   @include breakpoint($large) {
+    margin-bottom: -2.0em;
+
     width: span(4 of 12); // Keeps 3 items per row on large screens
 
     &:nth-child(3n + 1) {
@@ -199,11 +204,9 @@
   }
 }
 
-
-
   .page__meta {
     margin: 0 0 4px;
-    font-size: 0.6em;
+    font-size: 0.5em;
   }
 
   .page__meta-sep {
@@ -234,7 +237,7 @@
     }
 
     @include breakpoint($medium) {
-      max-height: 200px;
+      max-height: 205px;
     }
   }
 
@@ -251,6 +254,13 @@
     margin-bottom: 0;
   }
 }
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 .feature__item {
   position: relative;

@@ -112,22 +112,25 @@ defaults:
       layout: single
       author_profile: true
 
-  #_portfolio 
   - scope:
       path: ""
-      type: portfolio
+      type: turtlebot_projects
     values:
       layout: single
-      # author_profile: true
-      # comments: true
-      # share: true
-      # related: true
+
+  - scope:
+      path: ""
+      type: vision_projects
+    values:
+      layout: single
 
 collections:
-  portfolio:
-    output: true
+  turtlebot_projects: 
+    output: true 
     permalink: /:collection/:path/
-      
+  vision_projects: 
+    output: true 
+    permalink: /:collection/:path/  
 
 category_archive:
   type: liquid

@@ -3,11 +3,20 @@ layout: archive
 ---
 
 {{ content }}
-<!-- 
-<h2 style="text-align:left;">Posts</h2>
-<hr> -->
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
+<h2 style="text-align:left;">Computer Vision Projects</h2>
+<hr>
+{% assign entries_layout = page.entries_layout | default: 'block' %}
 <div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
+  {% include documents-collection.html collection=page.vision_collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
 </div>
+
+<div class="clearfix"></div>
+
+<h2 style="text-align:left;">Fun with Turtlebots!</h2>
+<hr>
+<div class="entries-{{ entries_layout }}">
+  {% include documents-collection.html collection=page.turtle_collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
+</div>
+<!-- clear fix to ensure the next content appears below the floated elements -->
+<div class="clearfix"></div>
