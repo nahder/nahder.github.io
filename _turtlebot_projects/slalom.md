@@ -1,7 +1,7 @@
 ---
-title: "Slalom Racing"
+title: "Slalom racing"
 author_profile: true
-excerpt: "Pure Pursuit, Proportional Control"
+excerpt: "Pure Pursuit, proportional control."
 key: 2
 header:
   teaser: /assets/sus.gif

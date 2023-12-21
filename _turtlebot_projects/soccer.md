@@ -1,5 +1,5 @@
 ---
-title: "Robo Soccer"
+title: "Robo-soccer"
 author_profile: true
 excerpt: "Find ball. Shoot ball."
 key: 3

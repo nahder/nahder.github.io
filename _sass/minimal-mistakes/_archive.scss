@@ -73,8 +73,9 @@
 }
 
 .archive__item-excerpt {
-  margin-top: 0;
+  margin-top: -1em;
   font-size: $type-size-6;
+  color: #e0dace; /* Replace with your desired color code */
 
   & + p {
     text-indent: 0;

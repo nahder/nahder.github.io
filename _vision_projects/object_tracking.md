@@ -1,7 +1,7 @@
 ---
-title: "Maze Solving"
+title: "Tracking object's with an event camera"
 author_profile: true
-excerpt: Djikstra's Algorithm, LiDAR-based pose correction
+excerpt: Event-based vision, Hough transforms, optimization-based pose estimation.
 key: 1
 header:
   teaser: /assets/sus.gif

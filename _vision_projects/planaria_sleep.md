@@ -1,7 +1,7 @@
 ---
-title: "Maze Solving"
+title: "Do planaria sleep?"
 author_profile: true
-excerpt: Djikstra's Algorithm, LiDAR-based pose correction
+excerpt: "Color thresholding, background subtraction, shape analysis, centroid tracking."
 key: 1
 header:
   teaser: /assets/sus.gif
