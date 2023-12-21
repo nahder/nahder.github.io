@@ -1,5 +1,5 @@
 ---
-title: Projects!
+title: Projects
 layout: collection
 permalink: /
 turtle_collection: turtlebot_projects

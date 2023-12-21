@@ -150,10 +150,9 @@
 }
 
 .grid__item {
-
+  margin-bottom: 0.5em;
   // You can remove the small breakpoint styling if you only want to start with 3 items per row at the medium breakpoint
   @include breakpoint($small) {
-  margin-bottom: -2.0em;
 
     float: left;
     width: span(6 of 12); // 2 items per row on small screens (optional)
@@ -170,7 +169,6 @@
   }
 
   @include breakpoint($medium) {
-    margin-bottom: -2.0em;
 
     width: span(4 of 12); // Span 4 columns for 3 items per row
 
@@ -187,7 +185,6 @@
   }
 
   @include breakpoint($large) {
-    margin-bottom: -2.0em;
 
     width: span(4 of 12); // Keeps 3 items per row on large screens
 

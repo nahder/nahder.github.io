@@ -4,7 +4,7 @@ layout: archive
 
 {{ content }}
 
-<h2 style="text-align:left;">Computer Vision Projects</h2>
+<h2 style="text-align:left; color: #e4953b; font-style: italic;margin-top: 0.1em; margin-bottom: 0.0em;">Computer Vision</h2>
 <hr>
 {% assign entries_layout = page.entries_layout | default: 'block' %}
 <div class="entries-{{ entries_layout }}">
@@ -13,7 +13,7 @@ layout: archive
 
 <div class="clearfix"></div>
 
-<h2 style="text-align:left;">Fun with Turtlebots!</h2>
+<h2 style="text-align:left; color: #e4953b; font-style: italic; margin-top: 0.1em; margin-bottom: 0.0em">Turtlebot Fun!</h2>
 <hr>
 <div class="entries-{{ entries_layout }}">
   {% include documents-collection.html collection=page.turtle_collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
