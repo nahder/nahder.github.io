@@ -2,8 +2,8 @@
 title: "Maze solving"
 author_profile: true
 excerpt: |
-  Hi <br>
-  bye
+  ‣ Djikstra's Algorithm <br>
+  ‣ LiDAR-based pose correction
 
 # excerpt:
 #  Djikstra's Algorithm, LiDAR-based pose correction.

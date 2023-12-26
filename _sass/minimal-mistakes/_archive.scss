@@ -72,10 +72,12 @@
   }
 }
 
+
 .archive__item-excerpt {
   margin-top: -1em;
   font-size: $type-size-6;
   color: #e0dace; /* Replace with your desired color code */
+  // background-color: rgb(110, 77, 38);
 
   & + p {
     text-indent: 0;
@@ -473,3 +475,4 @@
 		display: inline-block;
 	}
 }
+

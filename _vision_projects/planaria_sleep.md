@@ -1,7 +1,9 @@
 ---
 title: "Do planaria sleep?"
 author_profile: true
-excerpt: "Color thresholding, background subtraction, shape analysis, centroid tracking."
+excerpt: |
+  ‣ Color thresholding & background subtraction <br>
+  ‣ Shape analysis & centroid tracking <br>
 key: 1
 header:
   teaser: /assets/sus.gif
