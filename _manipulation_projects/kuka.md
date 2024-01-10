@@ -7,7 +7,7 @@ excerpt: |
   ‣ Feedforward control <br>
 key: 2
 header:
-  teaser: /assets/sus.gif
+  teaser: /assets/kuka.gif
   
 ---
 ###### This page is currently under construction.
