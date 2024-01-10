@@ -1,10 +1,9 @@
 ---
-title: "Tracking objects with an event camera"
+title: "BotROS: Franka Painter"
 author_profile: true
 excerpt: |
-  ‣ Event-based vision <br>
-  ‣ Hough transforms <br>
-  ‣ Optimization-based pose estimation <br>
+  ‣ MoveIt <br>
+  ‣ Pick and place <br>
 key: 1
 header:
   teaser: /assets/sus.gif

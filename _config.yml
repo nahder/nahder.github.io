@@ -114,6 +114,12 @@ defaults:
 
   - scope:
       path: ""
+      type: manipulation_projects
+    values:
+      layout: single
+
+  - scope:
+      path: ""
       type: turtlebot_projects
     values:
       layout: single
@@ -131,6 +137,9 @@ collections:
   vision_projects: 
     output: true 
     permalink: /:collection/:path/  
+  manipulation_projects: 
+    output: true 
+    permalink: /:collection/:path/
 
 category_archive:
   type: liquid
