@@ -5,7 +5,7 @@ excerpt: |
   ‣ Trajectory planning <br>
   ‣ Kinematics simulation <br>
   ‣ Feedforward control <br>
-key: 2
+key: 3
 header:
   teaser: /assets/kuka.gif
   

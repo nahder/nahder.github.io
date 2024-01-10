@@ -4,7 +4,7 @@ author_profile: true
 excerpt: |
   ‣ Kalman filtering <br>
   ‣ Color thresholding <br>
-key: 5
+key: 2
 header:
   teaser: /assets/pen.gif
 

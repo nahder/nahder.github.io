@@ -4,7 +4,7 @@ layout: archive
 
 {{ content }}
 
-<h2 style="text-align:left; color: #e4953b; font-style: italic;margin-top: 0.0em; margin-bottom: -1.0em;">Manipulation</h2>
+<h2 style="text-align:left; color: #e57a00; font-family: Futura, Arial, monospace;  text-transform: uppercase; text-shadow: 7px 7px 7px rgba(0,0,0,0.5); margin-top: 0.0em; margin-bottom: -1.0em;">MANIPULATION</h2>
 <hr>
 {% assign entries_layout = page.entries_layout | default: 'block' %}
 <div class="entries-{{ entries_layout }}">
@@ -13,7 +13,7 @@ layout: archive
 
 <div class="clearfix"></div>
 
-<h2 style="text-align:left; color: #e4953b; font-style: italic; margin-top: 0.0em; margin-bottom: -1.0em">Computer Vision</h2>
+<h2 style="text-align:left; color: #e57a00; font-family: Futura, Arial, monospace; text-transform: uppercase; text-shadow: 7px 7px 7px rgba(0,0,0,0.5); margin-top: 0.0em; margin-bottom: -1.0em;">COMPUTER VISION</h2>
 <hr>
 <div class="entries-{{ entries_layout }}">
   {% include documents-collection.html collection=page.vision_collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
@@ -21,7 +21,7 @@ layout: archive
 
 <div class="clearfix"></div>
 
-<h2 style="text-align:left; color: #e4953b; font-style: italic; margin-top: 0.0em; margin-bottom: -1.0em">Navigation & Planning</h2>
+<h2 style="text-align:left; color: #e57a00; font-family: Futura, Arial, monospace; text-transform: uppercase; text-shadow: 7px 7px 7px rgba(0,0,0,0.5); margin-top: 0.0em; margin-bottom: -1.0em;">NAVIGATION & PLANNING</h2>
 <hr>
 <div class="entries-{{ entries_layout }}">
   {% include documents-collection.html collection=page.nav_collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
@@ -29,11 +29,10 @@ layout: archive
 <!-- clear fix to ensure the next content appears below the floated elements -->
 <div class="clearfix"></div>
 
-<h2 style="text-align:left; color: #e4953b; font-style: italic; margin-top: 0.0em; margin-bottom: -1.0em">Turtlebot Fun!</h2>
+<h2 style="text-align:left; color: #e4953b; font-family: Futura, Arial, monospace; text-transform: uppercase; text-shadow: 7px 7px 7px rgba(0,0,0,0.5); margin-top: 0.0em; margin-bottom: -1.0em;">TURTLEBOT FUN!</h2>
 <hr>
 <div class="entries-{{ entries_layout }}">
   {% include documents-collection.html collection=page.turtle_collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
 </div>
 <!-- clear fix to ensure the next content appears below the floated elements -->
 <div class="clearfix"></div>
-
