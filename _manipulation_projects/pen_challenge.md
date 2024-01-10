@@ -1,9 +1,9 @@
 ---
-title: "Pen stealing with a PincherX"
+title: "Pen stealing with an Interbotix PincherX"
 author_profile: true
 excerpt: |
-  ‣ Color thresholding & background subtraction <br>
-  ‣ Shape analysis & centroid tracking <br>
+  ‣ Kalman filtering <br>
+  ‣ Color thresholding <br>
 key: 5
 header:
   teaser: /assets/sus.gif

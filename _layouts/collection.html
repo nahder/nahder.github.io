@@ -18,6 +18,14 @@ layout: archive
 <div class="entries-{{ entries_layout }}">
   {% include documents-collection.html collection=page.vision_collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
 </div>
+
+<div class="clearfix"></div>
+
+<h2 style="text-align:left; color: #e4953b; font-style: italic; margin-top: 0.0em; margin-bottom: -1.0em">Navigation & Planning</h2>
+<hr>
+<div class="entries-{{ entries_layout }}">
+  {% include documents-collection.html collection=page.nav_collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
+</div>
 <!-- clear fix to ensure the next content appears below the floated elements -->
 <div class="clearfix"></div>
 

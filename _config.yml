@@ -120,6 +120,12 @@ defaults:
 
   - scope:
       path: ""
+      type: nav_projects
+    values:
+      layout: single
+
+  - scope:
+      path: ""
       type: turtlebot_projects
     values:
       layout: single
@@ -138,6 +144,9 @@ collections:
     output: true 
     permalink: /:collection/:path/  
   manipulation_projects: 
+    output: true 
+    permalink: /:collection/:path/
+  nav_projects:
     output: true 
     permalink: /:collection/:path/
 

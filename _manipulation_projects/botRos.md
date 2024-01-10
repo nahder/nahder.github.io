@@ -1,5 +1,5 @@
 ---
-title: "BotROS: Franka Painter"
+title: "BotROS: Point Paintings with a Franka arm"
 author_profile: true
 excerpt: |
   ‣ MoveIt <br>
