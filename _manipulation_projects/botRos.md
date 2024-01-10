@@ -1,5 +1,5 @@
 ---
-title: "BotROS: Point Paintings with a Franka arm"
+title: "BotROS: Pointilism Paintings with a Franka arm"
 author_profile: true
 excerpt: |
   ‣ MoveIt <br>
@@ -7,7 +7,7 @@ excerpt: |
   ‣ Pick and place <br>
 key: 1
 header:
-  teaser: /assets/sus.gif
+  teaser: /assets/botROS4.gif
   
 ---
 ###### This page is currently under construction.

@@ -1,5 +1,5 @@
 ---
-title: "Do planaria go to sleep?"
+title: "Do planarian go to sleep?"
 author_profile: true
 excerpt: |
   ‣ Color thresholding & background subtraction <br>

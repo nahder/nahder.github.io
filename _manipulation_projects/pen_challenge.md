@@ -6,7 +6,7 @@ excerpt: |
   ‣ Color thresholding <br>
 key: 5
 header:
-  teaser: /assets/sus.gif
+  teaser: /assets/pen.gif
 
 ---
 ###### This page is currently under construction.
