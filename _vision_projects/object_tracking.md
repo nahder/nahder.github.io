@@ -5,7 +5,7 @@ excerpt: |
   ‣ Event-based vision <br>
   ‣ Hough transforms <br>
   ‣ Optimization-based pose estimation <br>
-key: 1
+key: 3
 header:
   teaser: /assets/sus.gif
   

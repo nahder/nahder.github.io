@@ -1,10 +1,12 @@
 ---
-title: "BotROS: Franka Painter"
+title: "Simon says with an Allegro hand (*In Progress!*)"
 author_profile: true
 excerpt: |
   ‣ MoveIt <br>
-  ‣ Pick and place <br>
-key: 1
+  ‣ Gesture classification <br>
+  ‣ Object grasping <br>
+
+key: 6
 header:
   teaser: /assets/sus.gif
   
