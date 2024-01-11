@@ -6,7 +6,7 @@ excerpt: |
   ‣ Shape analysis & centroid tracking <br>
 key: 4
 header:
-  teaser: /assets/botROS.gif
+  teaser: /assets/sus.gif
 
 ---
 ###### This page is currently under construction.
