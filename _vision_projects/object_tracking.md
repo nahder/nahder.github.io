@@ -7,7 +7,7 @@ excerpt: |
   ‣ Optimization-based pose estimation <br>
 key: 3
 header:
-  teaser: /assets/sus.gif
+  teaser: /assets/botROS3.gif
   
 ---
 ###### This page is currently under construction.
