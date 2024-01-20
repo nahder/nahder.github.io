@@ -2,7 +2,7 @@
 title: "Pen stealing with an Interbotix PincherX"
 author_profile: true
 excerpt: |
-  ‣ Kalman filtering <br>
+  ‣ Pen tracking, kalman filtering <br>
   ‣ Color thresholding <br>
 key: 2
 header:
