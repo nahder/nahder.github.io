@@ -18,8 +18,8 @@ It will pick up a brush, dip it in a color, and will begin painting some dots! I
 ## Demo
 <iframe
     width="100%"
-    height="60px"
-    src="https://www.youtube.com/watch?v=Pt7TTiF4OoU"
+    height="55px"
+    src="https://www.youtube.com/embed/Pt7TTiF4OoU"
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen
