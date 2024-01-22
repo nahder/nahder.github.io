@@ -15,18 +15,19 @@ In this project, robotics meets art! A 7 DOF Franka Panda arm, "BotROS", was pro
 BotROS is provided with a canvas, paint brushes, and a palette.
 It will pick up a brush, dip it in a color, and will begin painting some dots! It will return for more paint every 8 dots. Once the first color is complete, it will return its brush and pick up a new one before initiating a second round of color.
 
-## Demo
-<iframe
-    width="100%"
-    height="55px"
-    src="https://www.youtube.com/embed/Pt7TTiF4OoU"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
->
-</iframe>
+## Video Demo
+<iframe src="https://player.vimeo.com/video/905050367?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Franka Painter!"></iframe>
 
 ## Project Components
+
+### Point Generation
+
+### Motion Planning (MoveIt!)
+
+### April Tags
+
+
+
 
 ## Collage
 
