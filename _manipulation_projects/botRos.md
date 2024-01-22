@@ -20,14 +20,38 @@ It will pick up a brush, dip it in a color, and will begin painting some dots! I
 
 ## Project Components
 
-### Point Generation
+### Motion Planning
+A custom MoveIt API was developed in Python for interfacing with the Panda arm. This API facilitated the planning and executing of the following robot trajectories:
 
-### Motion Planning (MoveIt!)
+<div align="center">
+    <table style="border-collapse: collapse; width: 50%;">
+        <tr>
+            <th style="border: 1px solid white; padding: 10px;">Path Planning:</th>
+            <th style="border: 1px solid white; padding: 10px;">Description</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid white; padding: 10px;">Position</td>
+            <td style="border: 1px solid white; padding: 10px;">[Description of the path to Target 1]</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid white; padding: 10px;">Orientation</td>
+            <td style="border: 1px solid white; padding: 10px;">[Description of the path to Target 2]</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid white; padding: 10px;">Position + Orientation</td>
+            <td style="border: 1px solid white; padding: 10px;">[Description of the path to Target 2]</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid white; padding: 10px;">Cartesian</td>
+            <td style="border: 1px solid white; padding: 10px;">[Description of the path to Target 3]</td>
+        </tr>
+    </table>
+</div>
 
-### April Tags
-
-
-
+### Computer Vision
+-April Tags
+-Color Detection
+-Point Generation
 
 ## Collage
 
@@ -35,4 +59,3 @@ It will pick up a brush, dip it in a color, and will begin painting some dots! I
 
 
 
-Come back soon! :) 

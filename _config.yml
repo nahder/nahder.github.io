@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Nader's Portfolio
+title: Projects
 email: nahmed5150@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Graduate student in robotics at Northwestern University.
@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "Nader Ahmed"
   avatar : "/assets/images/nader.jpg"
-  bio    : "Robotics engineer, currently pursuing MS at Northwestern University :)"
+  bio    : "Robotics engineer, currently pursuing MS at Northwestern University"
   links:
     - label: "Evanston, IL"
       icon: "fas fa-map-pin" 
