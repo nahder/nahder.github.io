@@ -21,37 +21,38 @@ It will pick up a brush, dip it in a color, and will begin painting some dots! I
 ## Project Components
 
 ### Motion Planning
-A custom MoveIt API was developed in Python for interfacing with the Panda arm. This API facilitated the planning and executing of the following robot trajectories:
+<!-- TODO: hyperlink frankastein API -->
+A custom MoveIt wrapper `frankastein` was developed in Python for interfacing with the Franka. This API facilitated the planning and executing of robot trajectories by making requests to MoveIt's `GetPositionIK` and `GetCartesianPath` services.
 
 <div align="center">
-    <table style="border-collapse: collapse; width: 50%;">
+    <table style="border-collapse: collapse; width: 70%;">
         <tr>
-            <th style="border: 1px solid white; padding: 10px;">Path Planning:</th>
-            <th style="border: 1px solid white; padding: 10px;">Description</th>
+            <th style="border: 0.75px solid white; padding: 3.5px;">API Function:</th>
+            <th style="border: 0.75px solid white; padding: 3.5px;">Input</th>
         </tr>
         <tr>
-            <td style="border: 1px solid white; padding: 10px;">Position</td>
-            <td style="border: 1px solid white; padding: 10px;">[Description of the path to Target 1]</td>
+            <td style="border: 0.75px dashed white; padding: 3.5px;"><code>plan_path_to_position</code></td>
+            <td style="border: 0.75px dashed white; padding: 3.5px;">goal position (x,y,z)</td>
         </tr>
         <tr>
-            <td style="border: 1px solid white; padding: 10px;">Orientation</td>
-            <td style="border: 1px solid white; padding: 10px;">[Description of the path to Target 2]</td>
+            <td style="border: 0.75px dashed white; padding: 3.5px;"><code>plan_path_to_orientation</code></td>
+            <td style="border: 0.75px dashed white; padding: 3.5px;">goal quaternion (x,y,z,w)</td>
         </tr>
         <tr>
-            <td style="border: 1px solid white; padding: 10px;">Position + Orientation</td>
-            <td style="border: 1px solid white; padding: 10px;">[Description of the path to Target 2]</td>
+            <td style="border: 0.75px dashed white; padding: 3.5px;"><code>plan_path_to_position_orientation</code></td>
+            <td style="border: 0.75px dashed white; padding: 3.5px;">goal position(x,y,z) + quaternion (x,y,z,w)</td>
         </tr>
         <tr>
-            <td style="border: 1px solid white; padding: 10px;">Cartesian</td>
-            <td style="border: 1px solid white; padding: 10px;">[Description of the path to Target 3]</td>
+            <td style="border: 0.75px dashed white; padding: 3.5px;"><code>plan_path_cartesian</code></td>
+            <td style="border: 0.75px dashed white; padding: 3.5px;">list of position (x,y,z) waypoints</td>
         </tr>
     </table>
 </div>
 
 ### Computer Vision
--April Tags
--Color Detection
--Point Generation
+1. April Tags
+2. Color Detection
+3. Point Generation
 
 ## Collage
 
