@@ -22,8 +22,8 @@ The `NextState` function, implemented in [`state_transition.py`](https://github.
 <div align="left">
     <table style="border-collapse: separate; width: 70%; text-align: left; border-spacing: 0;">
         <tr>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-left-radius: 10px;">Parameter</th>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-right-radius: 10px;">Description</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-left-radius: 10px;">Parameter</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-right-radius: 10px;">Description</th>
         </tr>
         <tr>
             <td style="border: 0.75px solid gray; padding: 3.5px;">currentState</td>
@@ -54,8 +54,8 @@ The planner for the youBot end effector is implemented in [`trajectory_generator
 <div align="left">
     <table style="border-collapse: separate; width: 70%; text-align: left; border-spacing: 0;">
         <tr>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-left-radius: 10px;">Parameter</th>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-right-radius: 10px;">Description</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-left-radius: 10px;">Parameter</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-right-radius: 10px;">Description</th>
         </tr>
         <tr>
             <td style="border: 0.75px solid gray; padding: 3.5px;">Tse_init</td>
@@ -102,8 +102,8 @@ The terms are:
 <div align="left">
     <table style="border-collapse: separate; width: 70%; text-align: left; border-spacing: 0;">
         <tr>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-left-radius: 10px;">Parameter</th>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-right-radius: 10px;">Description</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-left-radius: 10px;">Parameter</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-right-radius: 10px;">Description</th>
         </tr>
         <tr>
             <td style="border: 0.75px solid gray; padding: 3.5px;">X</td>

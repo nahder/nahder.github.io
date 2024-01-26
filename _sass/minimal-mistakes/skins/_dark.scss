@@ -5,7 +5,7 @@
 /* Colors */
 $background-color: rgb(39, 38, 36) !default;
 $text-color: #eaeaea !default;
-$primary-color: #bf7105 !default;
+$primary-color: rgb(36, 144, 75) !default;
 $border-color: mix(#fff, $background-color, 20%) !default;
 $code-background-color: mix(#000, $background-color, 15%) !default;
 $code-background-color-dark: mix(#000, $background-color, 20%) !default;
@@ -33,7 +33,7 @@ $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
     display: inline-block;
     padding: 4px 12px;
     margin: 0 0;
-    background-color: #403c34; 
+    background-color: #3b4034; 
     color: white; 
     border: none;
     border-radius: 6px;
@@ -44,7 +44,7 @@ $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
     cursor: pointer;
 
     &:hover {
-      background-color: #bf7105; // Green background on hover
+      background-color: #305b40; // Green background on hover
   }
 }
 

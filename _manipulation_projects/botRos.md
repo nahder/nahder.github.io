@@ -23,11 +23,11 @@ It will pick up a brush, dip it in a color, and will begin painting some dots! I
 ### Motion Planning
 A custom MoveIt wrapper [`frankastein`](https://github.com/ME495-EmbeddedSystems/final-project-Group5/blob/main/mattagascar/mattagascar/submodules/frankastein.py) was developed in Python for interfacing with the Franka. This API facilitated the planning and executing of robot trajectories by making requests to MoveIt's `GetPositionIK` and `GetCartesianPath` services.
 
-<div align="center">
+<div align="left">
     <table style="border-collapse: separate; width: 70%; text-align: left; border-spacing: 0;">
         <tr>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-left-radius: 10px;">API Function:</th>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-right-radius: 10px;">Input</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-left-radius: 10px;">API Function:</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-right-radius: 10px;">Input</th>
         </tr>
         <tr>
             <td style="border: 0.75px solid gray; padding: 3.5px;"><code>plan_path_to_position</code></td>
