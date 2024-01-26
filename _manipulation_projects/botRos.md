@@ -2,15 +2,13 @@
 title: "BotROS: Painting with a Franka arm"
 author_profile: true
 excerpt: |
-  ‣ MoveIt <br>
+  ‣ ROS2, MoveIt <br>
   ‣ April tags <br>
   ‣ Pick and place <br>
 key: 1
 header:
   teaser: /assets/botROS4.gif
 ---
-
-
 
 In this project, robotics meets art! A 7 DOF Franka Panda arm, "BotROS", was programmed to autonomously create pointilist-style artwork. 
 
@@ -26,33 +24,34 @@ It will pick up a brush, dip it in a color, and will begin painting some dots! I
 A custom MoveIt wrapper [`frankastein`](https://github.com/ME495-EmbeddedSystems/final-project-Group5/blob/main/mattagascar/mattagascar/submodules/frankastein.py) was developed in Python for interfacing with the Franka. This API facilitated the planning and executing of robot trajectories by making requests to MoveIt's `GetPositionIK` and `GetCartesianPath` services.
 
 <div align="center">
-    <table style="border-collapse: collapse; width: 70%;">
+    <table style="border-collapse: separate; width: 70%; text-align: left; border-spacing: 0;">
         <tr>
-            <th style="border: 0.75px solid white; padding: 3.5px;">API Function:</th>
-            <th style="border: 0.75px solid white; padding: 3.5px;">Input</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-left-radius: 10px;">API Function:</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #574d3f; border-top-right-radius: 10px;">Input</th>
         </tr>
         <tr>
-            <td style="border: 0.75px solid white; padding: 3.5px;"><code>plan_path_to_position</code></td>
-            <td style="border: 0.75px solid white; padding: 3.5px;">goal position (x,y,z)</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;"><code>plan_path_to_position</code></td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">goal position (x,y,z)</td>
         </tr>
         <tr>
-            <td style="border: 0.75px solid white; padding: 3.5px;"><code>plan_path_to_orientation</code></td>
-            <td style="border: 0.75px solid white; padding: 3.5px;">goal quaternion (x,y,z,w)</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;"><code>plan_path_to_orientation</code></td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">goal quaternion (x,y,z,w)</td>
         </tr>
         <tr>
-            <td style="border: 0.75px solid white; padding: 3.5px;"><code>plan_path_to_position_orientation</code></td>
-            <td style="border: 0.75px solid white; padding: 3.5px;">goal position(x,y,z) + quaternion (x,y,z,w)</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;"><code>plan_path_to_position_orientation</code></td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">goal position(x,y,z) + quaternion (x,y,z,w)</td>
         </tr>
         <tr>
-            <td style="border: 0.75px solid white; padding: 3.5px;"><code>plan_path_cartesian</code></td>
-            <td style="border: 0.75px solid white; padding: 3.5px;">list of position (x,y,z) waypoints</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;"><code>plan_path_cartesian</code></td>
+            <td style="border: 0.75px solid gray; padding: 3.5px; border-bottom-right-radius: 10px;">list of position (x,y,z) waypoints</td>
         </tr>
     </table>
 </div>
 
 
+
 ### Computer Vision
-April tags are used to locate the brushes and palette. The `listener` node establishes the transformation between the camera and robot; it publishes the paint brush and palette locations. The `colordetection` node then color thresholds the image to determine the specific paint dip locations with respect to the robot frame. 
+April tags are used to locate the brushes and palette. The `listener` node establishes the transformation between the camera and robot and publishes the paint brush and palette locations. The `colordetection` node then color thresholds the image to determine the specific paint dip locations with respect to the robot frame. 
 
 The `PictureTaking` package creates a service `take_picture` which performs the following operations:
 - Snaps a picture from an Intel Realsense (images can also be supplied)
@@ -83,9 +82,5 @@ Our team decided to make a collage representing all of our undergraduate institu
 </table>
 
 Team: Nader Ahmed, Demiana Barsoum, Shail Dalal, Fiona Neylon, Courtney Smith
-Check out the project!
 
-Check out the project! [Github](https://github.com/nahder/BotROS-Franka/tree/main)
-
-
-
+Check out the project: <a href="https://github.com/nahder/BotROS-Franka/tree/main" class="github-button">GitHub</a>

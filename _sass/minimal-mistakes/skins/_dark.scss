@@ -28,3 +28,23 @@ $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 .ais-search-box .ais-search-box--input {
   background-color: $form-background-color;
 }
+
+.github-button {
+    display: inline-block;
+    padding: 4px 12px;
+    margin: 0 0;
+    background-color: #403c34; 
+    color: white; 
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #bf7105; // Green background on hover
+  }
+}
+
