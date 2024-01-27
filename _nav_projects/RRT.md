@@ -1,9 +1,10 @@
 ---
-title: "Unscented Kalman Filter for mobile pose estimation"
+title: "3-Dimensional RRT for path planning"
 author_profile: true
+excerpt: "Pure Pursuit, proportional control."
 excerpt: |
-  ‣ Unscented Kalman Filter (UKF) <br>
-  ‣ Dead reckoning adjustment
+  ‣ Rapidly Exploring Random Trees <br>
+  ‣ Obstacle avoidance
 key: 3
 header:
   teaser: /assets/sus.gif
