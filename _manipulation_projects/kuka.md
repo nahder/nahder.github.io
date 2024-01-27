@@ -18,7 +18,7 @@ The KUKA youBot is a mobile manipulator robot with four mecanum wheels and a 5R 
 ## Project Components
 
 ### I. Kinematics Simulator
-The `NextState` function, implemented in [`state_transition.py`](https://github.com/nahder/pick-place-kuka/blob/main/code/state_transition.py) takes the following inputs:
+The <code>NextState</code> function, implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/code/state_transition.py" target="_blank"><code>state_transition.py</code></a>, takes the following inputs:
 <div align="center">
     <table style="border-collapse: separate; width: 50%; text-align: left; border-spacing: 0;">
         <tr>
@@ -50,7 +50,7 @@ The `NextState` function, implemented in [`state_transition.py`](https://github.
 and outputs a new 12-vector configuration after time `dt` has passed. The new arm joint and wheel angles are computed using a first-order Euler step, while the chassis configuration is updated using odometry estimates for a four-mecanum-wheel robot. 
 
 ### II. Trajectory Generation
-The planner for the youBot end effector is implemented in [`trajectory_generator.py`](https://github.com/nahder/pick-place-kuka/blob/main/code/trajectory_generator.py). It takes the following inputs:
+The planner for the youBot end effector is implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/code/trajectory_generator.py" target="_blank"><code>trajectory_generator.py</code></a>. It takes the following inputs:
 
 <div align="center">
     <table style="border-collapse: separate; width: 50%; text-align: left; border-spacing: 0;">
@@ -86,13 +86,12 @@ The planner for the youBot end effector is implemented in [`trajectory_generator
 </div>
 
 
+and outputs a list of flattened reference trajectories for inputting into the CoppeliaSim simulator. These trajectories are a mix of screw and Cartesian types generated with the help of the <a href="https://github.com/NxRLab/ModernRobotics" target="_blank"><code>modern_robotics</code></a> library.
 
-
-and outputs a list of flattened reference trajectories for inputting into the CoppeliaSim simulator. These trajectories are a mix of screw and Cartesian types generated with the help of the [`modern_robotics`](https://github.com/NxRLab/ModernRobotics) library.
 
 
 ### III. Feedforward Control
-The controller, implemented in [`controller.py`](https://github.com/nahder/pick-place-kuka/blob/main/code/controller.py) is based on a feedforward plus feedback control law.
+The controller, implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/code/controller.py" target="_blank"><code>controller.py</code></a>, is based on a feedforward plus feedback control law.
 
 <div align="center">
     <img src="/assets/images/31n.svg" alt="Control Law Equation" width="60%" />
@@ -147,6 +146,6 @@ There is no overshoot and the error twist decays rapidly.
 </div>
 <br>
 
-Check out the project &#8594; <a href="https://github.com/nahder/pick-place-kuka" class="github-button">GitHub</a>
+Check out the project &#8594; <a href="https://github.com/nahder/pick-place-kuka" class="github-button" target="_blank" >GitHub</a>
 
 

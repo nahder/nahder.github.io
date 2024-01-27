@@ -23,7 +23,8 @@ It will pick up a brush, dip it in a color, and will begin painting some dots! I
 ## Project Components
 
 ### I. Motion Planning
-A custom MoveIt wrapper [`frankastein`](https://github.com/ME495-EmbeddedSystems/final-project-Group5/blob/main/mattagascar/mattagascar/submodules/frankastein.py) was developed in Python for interfacing with the Franka. This API facilitated the planning and executing of robot trajectories by making requests to MoveIt's `GetPositionIK` and `GetCartesianPath` services.
+A custom MoveIt wrapper <a href="https://github.com/ME495-EmbeddedSystems/final-project-Group5/blob/main/mattagascar/mattagascar/submodules/frankastein.py" target="_blank"><code>frankastein</code></a> was developed in Python for interfacing with the Franka. This API facilitated the planning and executing of robot trajectories by making requests to MoveIt's <code>GetPositionIK</code> and <code>GetCartesianPath</code> services.
+
 
 <div align="center">
     <table style="border-collapse: separate; width: 70%; text-align: left; border-spacing: 0;">
@@ -87,4 +88,4 @@ Our team decided to make a collage representing all of our undergraduate institu
 
 Team: Nader Ahmed, Demiana Barsoum, Shail Dalal, Fiona Neylon, Courtney Smith
 
-Check out the project &#8594; <a href="https://github.com/nahder/BotROS-Franka/tree/main" class="github-button">GitHub</a>
+Check out the project &#8594; <a href="https://github.com/nahder/BotROS-Franka/tree/main" class="github-button" target="_blank">GitHub</a>
