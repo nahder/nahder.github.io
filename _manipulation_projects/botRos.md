@@ -2,9 +2,8 @@
 title: "BotROS: Painting with a Franka arm"
 author_profile: true
 excerpt: |
-  ‣ ROS2, MoveIt <br>
-  ‣ April tags <br>
-  ‣ Pick and place <br>
+  • ROS2, MoveIt  
+  • April tags  
 key: 1
 header:
   teaser: /assets/botROS4.gif
