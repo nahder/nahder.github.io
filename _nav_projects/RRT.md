@@ -1,5 +1,5 @@
 ---
-title: "3-Dimensional RRT for path planning"
+title: "Rapidly Exploring Random Tree for path planning"
 author_profile: true
 excerpt: "Pure Pursuit, proportional control."
 excerpt: |
@@ -7,7 +7,7 @@ excerpt: |
   ‣ Obstacle avoidance
 key: 3
 header:
-  teaser: /assets/sus.gif
+  teaser: /assets/RRT.gif
 ---
 ###### This page is currently under construction.
 
