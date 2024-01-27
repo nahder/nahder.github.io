@@ -16,7 +16,7 @@ BotROS is provided with a canvas, paint brushes, and a palette.
 It will pick up a brush, dip it in a color, and will begin painting some dots! It will return for more paint every 8 dots. Once the first color is complete, it will return its brush and pick up a new one before initiating a second round of color.
 
 ## Video Demo
-<iframe width="1920" height="1080" src="https://www.youtube.com/embed/Pt7TTiF4OoU?si=0yTIfrHiUnRS2hOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/Pt7TTiF4OoU?si=0yTIfrHiUnRS2hOc" title="BotROS: Franka Painter" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 

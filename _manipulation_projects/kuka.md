@@ -13,7 +13,7 @@ header:
 The KUKA youBot is a mobile manipulator robot with four mecanum wheels and a 5R arm. In this project, the youBot is programmed to pick up a block, carry it to a new location, and put it down in simulation. This was done by modelling its kinematics, planning its reference trajectory, and using feedback + feedforward control to achieve it.
 
 ## Video Demo
-<iframe width="1920" height="1080" src="https://www.youtube.com/embed/g7g7mp1QBn4?si=aDpoQH_Eh17cebrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/Var7a3na2bc?si=pWmBYZxClUotghqm" title="Pick and place with a KUKA youBOT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Project Components
 
