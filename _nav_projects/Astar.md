@@ -6,7 +6,7 @@ excerpt: |
   ‣ Pathfinding & obstacle avoidance<br>
 key: 3
 header:
-  teaser: /assets/sus.gif
+  teaser: /assets/Astar.gif
 ---
 ###### This page is currently under construction.
 

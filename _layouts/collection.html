@@ -48,15 +48,17 @@ layout: archive
     margin-bottom: 0.1em;
   "
 >
-  COMPUTER VISION
+  NAVIGATION & PLANNING
 </h2>
 <div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.vision_collection
+  {% include documents-collection.html collection=page.nav_collection
   sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
 </div>
-
+<!-- clear fix to ensure the next content appears below the floated elements -->
 <div class="clearfix"></div>
 <hr />
+
+
 
 <h2
   style="
@@ -69,15 +71,16 @@ layout: archive
     margin-bottom: 0.1em;
   "
 >
-  NAVIGATION & PLANNING
+  COMPUTER VISION
 </h2>
 <div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.nav_collection
+  {% include documents-collection.html collection=page.vision_collection
   sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
 </div>
-<!-- clear fix to ensure the next content appears below the floated elements -->
+
 <div class="clearfix"></div>
 <hr />
+
 
 <h2
   style="
