@@ -2,13 +2,12 @@
 title: "Simon says with an Allegro hand (*In Progress!*)"
 author_profile: true
 excerpt: |
-  • MoveIt <br>
-  • Gesture classification <br>
-  • Object grasping <br>
+  • ROS2 <br>
+  • Gesture Recognition <br>
 
 key: 8
 header:
-  teaser: /assets/sus.gif
+  teaser: /assets/allegro_initial.gif
   
 ---
 ###### This page is currently under construction.
