@@ -3,7 +3,8 @@ title: "Maze solving"
 author_profile: true
 excerpt: |
   • Djikstra's Algorithm <br>
-  • LiDAR-based dynamic positioning
+  • LiDAR-based dynamic positioning <br>
+
 
 # excerpt:
 #  Djikstra's Algorithm, LiDAR-based pose correction.
