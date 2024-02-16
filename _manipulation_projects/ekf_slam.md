@@ -1,5 +1,5 @@
 ---
-title: "EKF SLAM with a Turtlebot (*In Progress!*)"
+title: "EKF SLAM from scratch (*In Progress!*)"
 author_profile: true
 excerpt: |
   • Differential Drive Kinematics<br>

@@ -1,5 +1,5 @@
 ---
-title: "Maze solving"
+title: "Solving a maze with a Turtlebot2"
 author_profile: true
 excerpt: |
   • Djikstra's Algorithm <br>

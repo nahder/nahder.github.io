@@ -17,7 +17,7 @@ The KUKA youBot is a mobile manipulator robot with four mecanum wheels and a 5R 
 ## Project Components
 
 ### I. Kinematics Simulator
-The <code>NextState</code> function, implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/code/state_transition.py" target="_blank"><code>state_transition.py</code></a>, takes the following inputs:
+The <code>NextState</code> function, implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/state_transition.py" target="_blank"><code>state_transition.py</code></a>, takes the following inputs:
 <div align="center">
     <table style="border-collapse: separate; width: 50%; text-align: left; border-spacing: 0;">
         <tr>
@@ -49,7 +49,7 @@ The <code>NextState</code> function, implemented in <a href="https://github.com/
 and outputs a new 12-vector configuration after time `dt` has passed. The new arm joint and wheel angles are computed using a first-order Euler step, while the chassis configuration is updated using odometry estimates for a four-mecanum-wheel robot. 
 
 ### II. Trajectory Generation
-The planner for the youBot end effector is implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/code/trajectory_generator.py" target="_blank"><code>trajectory_generator.py</code></a>. It takes the following inputs:
+The planner for the youBot end effector is implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/trajectory_generator.py" target="_blank"><code>trajectory_generator.py</code></a>. It takes the following inputs:
 
 <div align="center">
     <table style="border-collapse: separate; width: 50%; text-align: left; border-spacing: 0;">
@@ -90,7 +90,7 @@ and outputs a list of flattened reference trajectories for inputting into the Co
 
 
 ### III. Feedforward Control
-The controller, implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/code/controller.py" target="_blank"><code>controller.py</code></a>, is based on a feedforward plus feedback control law.
+The controller, implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/controller.py" target="_blank"><code>controller.py</code></a>, is based on a feedforward plus feedback control law.
 
 <div align="center">
     <img src="/assets/images/31n.svg" alt="Control Law Equation" width="60%" />
