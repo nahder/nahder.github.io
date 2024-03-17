@@ -22,7 +22,7 @@ Disclaimer: The ring finger of the hand currently has a broken gearbox at its ba
 
 ### I. System Overview
 <div align="center" style="margin-bottom: -120px;"> <!-- Adjust the px value as needed -->
-    <img src="/assets/images/simon_block.svg" alt="Simon Says block diagram" width="80%" />
+    <img src="/assets/images/simon_block.svg" alt="Simon Says block diagram" width="90%" />
 </div>
 
 ### II. MoveIt
