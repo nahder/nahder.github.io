@@ -15,8 +15,9 @@ The Allegro Hand is a robotic hand with four fingers and 16 degrees of freedom. 
 ## Video Demo
 
 <!-- TODO: update game video demo -->
-<iframe width="1920" height="1080" src="https://www.youtube.com/embed/Var7a3na2bc?si=pWmBYZxClUotghqm" title="Pick and place with a KUKA youBOT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/JjlHqf-6iAA?si=YEV3slOnF0c7TsMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+# Coming soon...
 ## Project Components
 
 ### I. System Overview
