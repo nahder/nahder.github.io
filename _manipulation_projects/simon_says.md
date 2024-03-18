@@ -1,5 +1,5 @@
 ---
-title: "Simon says with an Allegro hand (*In Progress!*)"
+title: "Simon says with an Allegro hand"
 author_profile: true
 excerpt: |
   • ROS2, MoveIt <br>
