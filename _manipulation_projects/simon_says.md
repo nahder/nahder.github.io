@@ -33,14 +33,23 @@ In `can_communicator`, the BHand library generates desired torques using PD cont
 
 ### III. Perception
 
-The [MediaPipe Hand Landmarker](https://developers.google.com/mediapipe/solutions/vision/hand_landmarker) detects 21 hand-knuckle coordinates from a camera stream. A hand gesture classifier (re-trained with custom configurations) then computes the most probable right-hand gesture. This model and classifier were integrated into the `gesture_classifier` node with a publisher. Stability criterion were added to ignore spurious classifications.
+The [MediaPipe Hand Landmarker](https://developers.google.com/mediapipe/solutions/vision/hand_landmarker) detects 21 hand-knuckle coordinates from a camera stream. A hand gesture classifier was [retrained with custom configurations](https://github.com/techfort/opencv-mediapipe-hand-gesture-recognition) and then computes the most probable right-hand gesture. This model and classifier were integrated into the `gesture_classifier` node with a publisher. Stability criterion were added to ignore spurious classifications.
 
 ### IV. Game
 
+The `allegro_game` node serves as the main game loop. It: <br>
+1) generates gesture sequences for the hand <br>
+2) sends them to the planner and controller modules <br>
+3) evaluates if the player has performed them with the perception module <br>
+4) increases difficulty each round 
 
+### Future Work
+- Re-filming with the fixed finger, adding more gestures
+- Incorporating motions into the sequences
+- GUI? Sound? Games have a lot of potential routes!
 
+### Thanks to:
+Matthew Elwin, Ritika Ghosh, Ananya Agarwhal, Zachary Alves
 
 Check out the project &#8594; <a href="https://github.com/nahder/Allegro-ROS2" class="github-button" target="_blank">GitHub</a>
-
-
 
