@@ -25,14 +25,17 @@ Disclaimer: The ring finger of the hand currently has a broken gearbox at its ba
     <img src="/assets/images/simon_block.svg" alt="Simon Says block diagram" width="90%" />
 </div>
 
-### II. MoveIt
-TODO
-<!-- TODO: add MoveIt demo -->
+### II. Planning & Control
 
+The MoveIt setup assistant was used to generate the `allegro_moveit_config` package. For generating collision-free point-to-point (PTP) trajectories, the PILZ Industrial Motion Planner was implemented.
 
-### III. Gesture Recognition
+In `can_communicator`, the BHand library generates desired torques using PD control to drive the error between the desired and current joint positions down. Since one of the fingers of the hand was not functioning, some joints were enforced to have zero torque. This was restructured from a [fork](https://github.com/simlabrobotics/allegro_hand_linux) from SimLab robotics and wrapped in a ROS2 package.
+
+### III. Perception
 TODO
 <!-- TODO: add Gesture recognition demo -->
+
+### IV. Game
 
 
 
