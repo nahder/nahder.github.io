@@ -17,7 +17,7 @@ The Allegro Hand is a robotic hand with four fingers and 16 degrees of freedom. 
 <!-- TODO: update game video demo -->
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/JjlHqf-6iAA?si=YEV3slOnF0c7TsMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-Disclaimer: The ring finger of the hand currently has a broken gearbox at its base joint. Once it is repaired the video will be re-filmed with some more interesting gestures!
+Disclaimer: The ring finger of our hand currently has a broken gearbox at its base joint. Once it is repaired the video will be re-filmed with some more interesting gestures!
 
 ## System Overview
 <div align="center" style="margin-bottom: -120px;"> <!-- Adjust the px value as needed -->
