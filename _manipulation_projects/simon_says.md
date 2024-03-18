@@ -18,24 +18,23 @@ The Allegro Hand is a robotic hand with four fingers and 16 degrees of freedom. 
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/JjlHqf-6iAA?si=YEV3slOnF0c7TsMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Disclaimer: The ring finger of the hand currently has a broken gearbox at its base joint. Once it is repaired the video will be re-filmed with some more interesting gestures!
-## Project Components
 
-### I. System Overview
+## System Overview
 <div align="center" style="margin-bottom: -120px;"> <!-- Adjust the px value as needed -->
     <img src="/assets/images/simon_block.svg" alt="Simon Says block diagram" width="90%" />
 </div>
 
-### II. Planning & Control
+## Planning & Control
 
 The MoveIt setup assistant was used to generate the `allegro_moveit_config` package. For generating collision-free point-to-point (PTP) trajectories, the PILZ Industrial Motion Planner was used. The planning is performed in `moveit_controller` within the `control_hand` package and then interfaces with `can_communicator`. 
 
 In `can_communicator`, the BHand library generates desired torques using PD control to drive the error between the desired and current joint positions down. Since one of the fingers of the hand was not functioning, some joints were enforced to have zero torque. This was restructured from a <a href="https://github.com/simlabrobotics/allegro_hand_linux" target="_blank">fork</a> from SimLab robotics and wrapped in `can_communicator` within the ROS2 package.
 
-### III. Perception
+## Perception
 
 The <a href="https://developers.google.com/mediapipe/solutions/vision/hand_landmarker" target="_blank">MediaPipe Hand Landmarker</a> detects 21 hand-knuckle coordinates from a camera stream. A hand gesture classifier was <a href="https://github.com/techfort/opencv-mediapipe-hand-gesture-recognition" target="_blank">retrained with custom configurations</a> and then computes the most probable right-hand gesture. This model and classifier were integrated into the `gesture_classifier` node with a publisher. Stability criterion were added to ignore spurious classifications.
 
-### IV. Game
+## Game
 
 The `allegro_game` node serves as the main game loop. It: <br>
 1) generates gesture sequences for the hand <br>
