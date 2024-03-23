@@ -3,9 +3,9 @@
    ========================================================================== */
 
 /* Colors */
-$background-color: rgb(39, 38, 36) !default;
+$background-color: #252a34 !default;
 $text-color: #eaeaea !default;
-$primary-color: rgb(36, 144, 75) !default;
+$primary-color: #06c8d2 !default;
 $border-color: mix(#fff, $background-color, 20%) !default;
 $code-background-color: mix(#000, $background-color, 15%) !default;
 $code-background-color-dark: mix(#000, $background-color, 20%) !default;
@@ -28,6 +28,7 @@ $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 .ais-search-box .ais-search-box--input {
   background-color: $form-background-color;
 }
+
 
 .github-button {
     display: inline-block;

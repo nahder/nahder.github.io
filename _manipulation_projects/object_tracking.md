@@ -5,7 +5,7 @@ excerpt: |
   • Event-based vision <br>
   • Hough line detector <br>
   • Optimization
-key: 8
+key: 4
 header:
   teaser: /assets/EC.gif
   
