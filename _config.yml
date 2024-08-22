@@ -114,6 +114,12 @@ defaults:
 
   - scope:
       path: ""
+      type: projects
+    values:
+      layout: single
+
+  - scope:
+      path: ""
       type: manipulation_projects
     values:
       layout: single
@@ -147,6 +153,9 @@ collections:
     output: true 
     permalink: /:collection/:path/
   nav_projects:
+    output: true 
+    permalink: /:collection/:path/
+  projects:
     output: true 
     permalink: /:collection/:path/
 

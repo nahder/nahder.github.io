@@ -2,6 +2,7 @@
 title: 
 layout: collection
 permalink: /
+projects_collection: projects
 turtle_collection: turtlebot_projects
 vision_collection: vision_projects
 manipulation_collection: manipulation_projects

@@ -2,9 +2,9 @@
 title: "Planning while driving with online A*"
 author_profile: true
 excerpt: |
-  ‣ Unknown search space <br>
-  ‣ Pathfinding & obstacle avoidance<br>
-key: 3
+  • Unknown search space <br>
+  • Pathfinding & obstacle avoidance<br>
+key: 4
 header:
   teaser: /assets/Astar.gif
 ---
