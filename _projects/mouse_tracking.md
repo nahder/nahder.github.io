@@ -5,7 +5,7 @@ excerpt: |
 
 key: 1
 header:
-  teaser: /assets/hi.gif
+  teaser: /assets/tracker.gif
 ---
 
 <!-- Introduction section about project -->
