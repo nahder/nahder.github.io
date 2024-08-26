@@ -2,10 +2,11 @@
 title: "Motorized tracking and following a mouse"
 author_profile: true
 excerpt: |
-
+  • Object tracking
+  • Deep neural networks
 key: 1
 header:
-  teaser: /assets/tracker.gif
+  teaser: /assets/sideby.gif
 ---
 
 <!-- Introduction section about project -->
