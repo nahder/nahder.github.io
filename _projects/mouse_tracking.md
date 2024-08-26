@@ -81,36 +81,46 @@ The DM542 drivers have 8 toggleable bits to configure its RMS, peak, and standst
 </div>
 
 <!-- Caption -->
-<div style="text-align: center; margin-top: -10px;">
+<div style="text-align: left; margin-top: -10px;">
     <i>Left: Benchmarked average error for different microstepping settings. Right: Graph of error over time for 1/32 microstepping, chosen to be the best.</i>
 </div>
 
 
-
-
-
-
-<!-- graph of error -->
-
-
-
-<!-- 
-- nema23 bipolar stepper motors, etc...
-- drivers, microstepping, dm542 microstep settings & power consumption can be configured with x,y,z pins...
-- power supply, voltage & current requirements
-- discuss previous setup, performance improvement?
-- limit switches, RC filtering, reference GRBL, 
-- interrupt service routine
-- calibration routine, internal pull ups
-- benchmarking 
-- finger tracking? -->
-
-
 ## Computer Vision 
-<!-- 
-- homography
-- mrcal calibration to correct for distortion
-- corner detection  -->
+The previous iteration of this project had corners of the mouse workspace as tracked features; this was deemed unnecessarily taxing on the inference speed of the live model. To replace it, a corner detector using OpenCV was added. The steps can be summarized as follows:
+
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+    <!-- Numbered Bullets -->
+    <div style="flex: 1;">
+        <ol>
+            <li>Image capture</li>
+            <li>Contrast and brightness adjustment</li>
+            <li>Median blurring</li>
+            <li>Adaptive thresholding</li>
+            <li>Morphological operations (dilation followed by erosion)</li>
+            <li>Contour detection</li>
+            <li>Polygon approximation on the largest contour</li>
+        </ol>
+    </div>
+
+    <!-- Image -->
+    <div style="flex: 1;">
+        <img src="/assets/images/corners.png" alt="Corner Detection" width="100%" />
+    </div>
+</div>
+<div style="text-align: left; margin-top: -10px;">
+  <i>The hyperparameters involved in this detection are put on trackbars for adjustability in different lighting conditions. In the case where the low lighting proves accurate detections to be difficult, a manual corner clicker is also available.</i>
+</div>
+
+<div style="padding: 15px;"></div>
+
+The detected corners are then used to estimate the homography between the camera image plane and cage plane. This is used for perspective correction, since it is known that the corners should form a non-slanted square:
+
+<div align="center"> 
+    <img src="/assets/images/homography.png" alt="Homography for perspective correction" width="70%" />
+</div>
+
+
 
 ## Deep Learning
 <!-- 
