@@ -123,12 +123,12 @@ The detected corners are then used to estimate the homography between the camera
 
 
 ## Deep Learning
-All models used for mouse feature prediction were trained using <a href="http://www.mackenziemathislab.org/deeplabcut" target="_blank">DeepLabCut</a>.. Since this is a live setup, achieving high inference speed was crucial. To optimize performance, we employed transfer learning with various pre-trained network architectures, each fine-tuned for our specific task. 
+All models used for mouse feature prediction were trained using <a href="http://www.mackenziemathislab.org/deeplabcut" target="_blank">DeepLabCut</a>.. Since this is a live setup, achieving high inference speed was crucial. To optimize performance, different pre-trained network architectures were tested for the purposes of tracking the ears of mice. 
 
-The previous setup used a Jetson Nano with a 128-core Maxwell architecture. This was able to achieve an inference speed of ~16 fps at best. The benchmarking done below shows that this was a significant bottleneck, as the inference speed could be easily 
+The previous setup used a Jetson Nano with a 128-core Maxwell architecture. This was able to achieve an inference speed of ~16 fps at best. The benchmarking done below shows that this was a significant bottleneck, as the inference speed could increase by 8x with the higher end GPUs. This would also suggest that obtaining a camera with a higher framerate would enable faster tracking. 
 
 <div align="center">
-    <table style="border-collapse: separate; width: 150%; text-align: left; border-spacing: 0.5;">
+    <table style="border-collapse: separate; width: 100%; text-align: left; border-spacing: 0.5;">
         <!-- First Row: Main Headers -->
         <tr>
             <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-left-radius: 10px;">Model</th>
@@ -136,12 +136,67 @@ The previous setup used a Jetson Nano with a 128-core Maxwell architecture. This
             <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;"># Params</th>
             <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;">Training loss (last iter)</th>
             <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;">Testing RMSE (pixels)</th>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;">RTX 4060</th>
-            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-right-radius: 10px;">RTX 6000</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;">Inference Speed (FPS) RTX 4060</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-right-radius: 10px;">Inference Speed (FPS) RTX 6000</th>
         </tr>
 
-        <!-- Data Rows -->
+        <!-- Data Rows with GPU Performance -->
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_1.0</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2,327,207</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0018</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2.05</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">125.44</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">332.29</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_0.75</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">1,451,287</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0019</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2.16</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">154.30</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">334.08</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_0.50</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">775,447</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0022</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2.48</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">182.60</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">324.2</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_0.35</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">479,431</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0024</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">3.04</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">192.11</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">327.71</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">efficientnet-b0</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">3,652,310</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0018</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">1.99</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">138.75</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">283.48</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px; border-bottom-left-radius: 10px;">efficientnet-b3</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">10,208,531</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0024</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2.05</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">86.86</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px; border-bottom-right-radius: 10px;">243.18</td>
+        </tr>
 
+        <!-- Data Rows without GPU Performance (N/A) -->
         <tr>
             <td style="border: 0.75px solid gray; padding: 3.5px;">resnet_50</td>
             <td style="border: 0.75px solid gray; padding: 3.5px;">PyTorch</td>
@@ -177,60 +232,6 @@ The previous setup used a Jetson Nano with a 128-core Maxwell architecture. This
             <td style="border: 0.75px solid gray; padding: 3.5px;">1.9</td>
             <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
             <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
-        </tr>
-        <tr>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_1.0</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">2,327,207</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0018</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">2.05</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">332.29</td>
-        </tr>
-        <tr>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_0.75</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">1,451,287</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0019</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">2.16</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">334.08</td>
-        </tr>
-        <tr>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_0.50</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">775,447</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0022</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">2.48</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">324.2</td>
-        </tr>
-        <tr>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_0.35</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">479,431</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0024</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">3.04</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">327.71</td>
-        </tr>
-        <tr>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">efficientnet-b0</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">3,652,310</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0018</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">1.99</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">283.48</td>
-        </tr>
-        <tr>
-            <td style="border: 0.75px solid gray; padding: 3.5px; border-bottom-left-radius: 10px;">efficientnet-b3</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">10,208,531</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0024</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">2.05</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
-            <td style="border: 0.75px solid gray; padding: 3.5px; border-bottom-right-radius: 10px;">243.18</td>
         </tr>
     </table>
 </div>
