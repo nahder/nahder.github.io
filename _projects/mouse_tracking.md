@@ -236,21 +236,7 @@ The previous setup used a Jetson Nano with a 128-core Maxwell architecture. This
     </table>
 </div>
 
-
-
-<!-- 
-- intro about deeplabcut
-- deeplabcut creates X model, that can be exported to Y, that can be used for live processing
-- goal to increase inference speed as much as possible for live mouse following
-
-- model benchmarking (add my computer performance, machine specs. )
-- processing: option for kalman filter and moving average filter
-- processing module written for realsense, and mouse simulation performed by feeding in frames to DLC live 
-
-
--performance graph with moving average filter + extreme outliers removed  -->
-
 ## Collaborators
 Thanks to Matt Elwin, Mang Gao, John Barrett, Gordon Shepherd, for guidance and collaboration.
 
-Check out the project &#8594; <a href=" " class="github-button" target="_blank">GitHub</a>
+Check out the project &#8594; <a href="https://github.com/nahder/mouse-tracker" class="github-button" target="_blank">GitHub</a>
