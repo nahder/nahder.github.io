@@ -6,7 +6,7 @@ excerpt: |
   • Deep neural networks
 key: 1
 header:
-  teaser: /assets/sideby.gif
+  teaser: /assets/HELP.gif
 ---
 
 <!-- Introduction section about project -->
