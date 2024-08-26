@@ -123,6 +123,120 @@ The detected corners are then used to estimate the homography between the camera
 
 
 ## Deep Learning
+All models used for mouse feature prediction were trained using <a href="http://www.mackenziemathislab.org/deeplabcut" target="_blank">DeepLabCut</a>.. Since this is a live setup, achieving high inference speed was crucial. To optimize performance, we employed transfer learning with various pre-trained network architectures, each fine-tuned for our specific task. 
+
+The previous setup used a Jetson Nano with a 128-core Maxwell architecture. This was able to achieve an inference speed of ~16 fps at best. The benchmarking done below shows that this was a significant bottleneck, as the inference speed could be easily 
+
+<div align="center">
+    <table style="border-collapse: separate; width: 150%; text-align: left; border-spacing: 0.5;">
+        <!-- First Row: Main Headers -->
+        <tr>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-left-radius: 10px;">Model</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;">Engine</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;"># Params</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;">Training loss (last iter)</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;">Testing RMSE (pixels)</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40;">RTX 4060</th>
+            <th style="border: 0.75px solid gray; padding: 3.5px; background-color: #305b40; border-top-right-radius: 10px;">RTX 6000</th>
+        </tr>
+
+        <!-- Data Rows -->
+
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">resnet_50</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">PyTorch</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">23,618,630</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.00009</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">1.5</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">resnet_50</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">23,672,033</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0016</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2.11</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">resnet_101</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">42,716,385</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0015</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">1.91</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_1.0</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">PyTorch</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">1,401,903</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0011</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">1.9</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_1.0</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2,327,207</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0018</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2.05</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">332.29</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_0.75</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">1,451,287</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0019</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2.16</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">334.08</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_0.50</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">775,447</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0022</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2.48</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">324.2</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">mobilenet_v2_0.35</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">479,431</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0024</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">3.04</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">327.71</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">efficientnet-b0</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">3,652,310</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0018</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">1.99</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">283.48</td>
+        </tr>
+        <tr>
+            <td style="border: 0.75px solid gray; padding: 3.5px; border-bottom-left-radius: 10px;">efficientnet-b3</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">TensorFlow</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">10,208,531</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">0.0024</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">2.05</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px;">N/A</td>
+            <td style="border: 0.75px solid gray; padding: 3.5px; border-bottom-right-radius: 10px;">243.18</td>
+        </tr>
+    </table>
+</div>
+
+
+
 <!-- 
 - intro about deeplabcut
 - deeplabcut creates X model, that can be exported to Y, that can be used for live processing
@@ -135,7 +249,7 @@ The detected corners are then used to estimate the homography between the camera
 
 -performance graph with moving average filter + extreme outliers removed  -->
 
-## Future Work
-<!-- - move out of prototyping by making a PCB -->
-
 ## Collaborators
+Thanks to Matt Elwin, Mang Gao, John Barrett, Gordon Shepherd, for guidance and collaboration.
+
+Check out the project &#8594; <a href=" " class="github-button" target="_blank">GitHub</a>
