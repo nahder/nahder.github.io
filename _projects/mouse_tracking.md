@@ -22,7 +22,7 @@ This new setup was developed in order to capture this camera footage while allow
 ## Video Demo
 <!-- reference video link -->
 
-<iframe width="1920" height="1080" src="https://youtu.be/0_qbWtACnMs" title="Motorized mouse tracker" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1920" height="1080" src="https://youtu.be/ZT3MLCrN2d0" title="Motorized mouse tracker" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## System Diagram
 
