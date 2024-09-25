@@ -4,7 +4,7 @@ author_profile: true
 excerpt: |
   • Trajectory planning <br>
   • Feedback control <br>
-key: 2
+key: 4
 header:
   teaser: /assets/kuka.gif
 ---
@@ -14,9 +14,8 @@ The KUKA youBot is a mobile manipulator robot with four mecanum wheels and a 5R 
 ## Video Demo
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/Var7a3na2bc?si=pWmBYZxClUotghqm" title="Pick and place with a KUKA youBOT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Project Components
 
-### I. Kinematics Simulator
+## Kinematics Simulator
 The <code>NextState</code> function, implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/state_transition.py" target="_blank"><code>state_transition.py</code></a>, takes the following inputs:
 <div align="center">
     <table style="border-collapse: separate; width: 50%; text-align: left; border-spacing: 0;">
@@ -48,7 +47,7 @@ The <code>NextState</code> function, implemented in <a href="https://github.com/
 
 and outputs a new 12-vector configuration after time `dt` has passed. The new arm joint and wheel angles are computed using a first-order Euler step, while the chassis configuration is updated using odometry estimates for a four-mecanum-wheel robot. 
 
-### II. Trajectory Generation
+## Trajectory Generation
 The planner for the youBot end effector is implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/trajectory_generator.py" target="_blank"><code>trajectory_generator.py</code></a>. It takes the following inputs:
 
 <div align="center">
@@ -89,7 +88,7 @@ and outputs a list of flattened reference trajectories for inputting into the Co
 
 
 
-### III. Feedforward Control
+## Feedforward Control
 The controller, implemented in <a href="https://github.com/nahder/pick-place-kuka/blob/main/controller.py" target="_blank"><code>controller.py</code></a>, is based on a feedforward plus feedback control law.
 
 <div align="center">
@@ -134,7 +133,7 @@ The terms are:
 
 
 
-### IV. Results 
+## Results 
 
 The robot was successful at picking up the block and placing it at the desired position.
 There is no overshoot and the error twist decays rapidly.
