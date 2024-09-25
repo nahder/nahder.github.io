@@ -52,7 +52,7 @@ A custom MoveIt wrapper <a href="https://github.com/ME495-EmbeddedSystems/final-
 ## Computer Vision
 April tags are used to locate the brushes and palette. The `listener` node establishes the transformation between the camera and robot and publishes the paint brush and palette locations. The `colordetection` node then color thresholds the image to determine the specific paint dip locations with respect to the robot frame. 
 
-The `PictureTaking` package creates a service `take_picture` which performs the following operations:
+The `PictureTaking` package offers the `take_picture` service which performs the following operations:
 - Snaps a picture from an Intel Realsense (images can also be supplied)
 - Applies morphological operations (dilation + erosion) 
 - Applies a Canny edge detector
