@@ -2,15 +2,13 @@
 title: "Motorized tracking and following a mouse"
 author_profile: true
 excerpt: |
-  • Object tracking
-  • Deep neural networks
+  • Object tracking <br>
+  • Deep neural networks <br>
 key: 1
 header:
   teaser: /assets/HELP.gif
 ---
 
-<!-- Introduction section about project -->
-## Motivation
 This project is in collaboration with the <a href="https://www.shepherdlab.net/" target="_blank">Shepherd Lab</a> at the Feinberg School of Medicine. The goal is to study the multi-motor and sensorimotor coordination in mice feeding behavior. Previous setups aimed at examining this held the mice stationary while recording feeding footage from below them. 
 
 This new setup was developed in order to capture this camera footage while allowing the mice to roam freely. Two stepper motors are used along with a trained network (using DeepLabCut) to move and keep the camera under the mouse at all times.
@@ -23,7 +21,8 @@ This new setup was developed in order to capture this camera footage while allow
 ## Video Demo
 <!-- reference video link -->
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/ZT3MLCrN2d0?si=XG0ChcgyWqILw92A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-## System Diagram
+
+## System Overview
 
 <!-- Block diagram -->
 <div align="center"> 

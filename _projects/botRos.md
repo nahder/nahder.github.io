@@ -17,11 +17,7 @@ It will pick up a brush, dip it in a color, and will begin painting some dots! I
 ## Video Demo
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/Pt7TTiF4OoU?si=0yTIfrHiUnRS2hOc" title="BotROS: Franka Painter" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-
-
-## Project Components
-
-### I. Motion Planning
+## Motion Planning
 A custom MoveIt wrapper <a href="https://github.com/ME495-EmbeddedSystems/final-project-Group5/blob/main/mattagascar/mattagascar/submodules/frankastein.py" target="_blank"><code>frankastein</code></a> was developed in Python for interfacing with the Franka. This API facilitated the planning and executing of robot trajectories by making requests to MoveIt's <code>GetPositionIK</code> and <code>GetCartesianPath</code> services.
 
 
@@ -53,7 +49,7 @@ A custom MoveIt wrapper <a href="https://github.com/ME495-EmbeddedSystems/final-
 
 
 
-### II. Computer Vision
+## Computer Vision
 April tags are used to locate the brushes and palette. The `listener` node establishes the transformation between the camera and robot and publishes the paint brush and palette locations. The `colordetection` node then color thresholds the image to determine the specific paint dip locations with respect to the robot frame. 
 
 The `PictureTaking` package creates a service `take_picture` which performs the following operations:
@@ -67,7 +63,7 @@ The `PictureTaking` package creates a service `take_picture` which performs the 
 |:--:| 
 | *Swarthmore S points.* |
 
-### III. Collage
+## Collage
 Our team decided to make a collage representing all of our undergraduate institutions: 
 
 <table>

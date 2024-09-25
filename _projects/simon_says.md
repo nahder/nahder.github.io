@@ -5,7 +5,7 @@ excerpt: |
   • ROS2, MoveIt <br>
   • Gesture Recognition <br>
 
-key: 9
+key: 2
 header:
   teaser: /assets/allegro_initial.gif
   
