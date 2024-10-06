@@ -27,5 +27,8 @@ An initial calibration routine calculates the spatial offsets between the camera
 
 ## Action
 
+The `modern_robotics` library is leveraged by the Interbotix SDK for both forward and inverse kinematics. The `FKinSpace` function calculates the robot arm's current end-effector pose by generating a transformation matrix using the robot's home configuration `M`, the screw axes `Slist`, and the current joint angles. This transformation matrix accurately represents the arm's spatial position within the robot frame.
+
+Once the pen's position is accurately mapped in the robot frame, the `set_ee_pose_components` function from the Interbotix SDK is invoked to command the robot arm. This function calls `IKinSpace` to compute the necessary joint angles required to achieve the desired end-effector pose based on the target pen pose. 
 
 Check out the project &#8594; <a href="https://github.com/nahder/pen_stealing" class="github-button" target="_blank" >GitHub</a>
