@@ -22,9 +22,21 @@ Event cameras are vision sensors that capture changes in light intensity at each
 
 
 ## Tracking a disc
-The first step involved tracking a 2D object, such as a coin using recorded events from the EVK4. 
+The first step towards 3D object tracking involved tracking a 2D object, such as a coin using recorded events from the EVK4. 
+
+
+<div style="text-align: center; width: 70%; margin: 0 auto;">
+    <img src="/assets/images/disk_events.png" alt="2D Disk Tracking" style="width: 100%; height: auto;">
+    <i style="display: block; text-align: left;">temp1 </i>
+</div>
+
+<div style="text-align: center; width: 70%; margin: 0 auto;">
+    <img src="/assets/images/disk_tracking_plot.png" alt="2D Disk Tracking" style="width: 100%; height: auto;">
+    <i style="display: block; text-align: left;">temp1 </i>
+</div>
 
 ## Creating a sensor model
+
 
 ## Hough line detector
 <!-- overlay rubix cube over gif -->
