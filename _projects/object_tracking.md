@@ -17,23 +17,29 @@ Event cameras are vision sensors that capture changes in light intensity at each
 
 <div style="text-align: center; width: 70%; margin: 0 auto;">
     <img src="/assets/EC.gif" alt="Event Camera Example" style="width: 100%; height: auto;">
-    <i style="display: block; text-align: left;">Waving at the EVK4. White and blue dots represent positive and negative events respectively (increases/decreases in intensity). When attempting to stay still, less events are generated. </i>
+    <i style="display: block; text-align: left;">Waving at the EVK4. Blue and white dots represent positive and negative events respectively (increases/decreases in intensity). When attempting to stay still, less events are generated. </i>
 </div>
 
 
 ## Tracking a disc
 The first step towards 3D object tracking involved tracking a 2D object, such as a coin using recorded events from the EVK4. 
 
+<div style="text-align: center; width: 70%; margin: 0 auto;">
+    <img src="/assets/images/fallingdisk.png" alt="2D Disk Tracking" style="width: 100%; height: auto;">
+    <i style="display: block; text-align: left;">Events generated from coin falling in free space. Notably, the negative events (white) trail behind quite a bit. This ghosting effect prompted the development of a sensor model to gauge what was happening. </i>
+</div>
+
 
 <div style="text-align: center; width: 70%; margin: 0 auto;">
-    <img src="/assets/images/disk_events.png" alt="2D Disk Tracking" style="width: 100%; height: auto;">
+    <img src="/assets/simulated_events.gif" alt="Sensor Model" style="width: 100%; height: auto;">
     <i style="display: block; text-align: left;">temp1 </i>
 </div>
 
 <div style="text-align: center; width: 70%; margin: 0 auto;">
-    <img src="/assets/images/disk_tracking_plot.png" alt="2D Disk Tracking" style="width: 100%; height: auto;">
+    <img src="/assets/cube_events.gif" alt="Rubiks cube" style="width: 100%; height: auto;">
     <i style="display: block; text-align: left;">temp1 </i>
 </div>
+
 
 ## Creating a sensor model
 
