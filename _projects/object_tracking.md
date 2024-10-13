@@ -22,8 +22,9 @@ Event cameras are vision sensors that capture changes in light intensity at each
 
 
 ## Tracking a disc
-The first step towards 3D object tracking involved tracking a 2D object, such as a coin using recorded events from the EVK4. 
+The first step towards 3D object tracking involved tracking a 2D object, such as a coin using recorded events from the EVK4. The Hough circle transformation was used to fit circles to the perimeter of the coin. Since each event lies on the perimeter of the moving disk, 
 
+ The transformation leveraged the edge events, which represent changes in brightness along the object's boundary, to detect and track the coin’s circular shape in real time. This method allowed for precise localization of the coin’s center and radius, providing a foundation for further 3D tracking developments.
 
 <div style="text-align: center; width: 70%; margin: 0 auto;">
     <img src="../assets/images/fallingdisk.png" alt="2D Disk Tracking" style="width: 100%; height: auto;">
@@ -31,7 +32,7 @@ The first step towards 3D object tracking involved tracking a 2D object, such as
     Right: Events generated from coin falling in free space. Notably, the negative events (white) trail behind quite a bit. This ghosting effect prompted the development of a sensor model to gauge what was happening. </i>
 </div>
 
-
+ 
 <div style="text-align: center; width: 70%; margin: 0 auto;">
     <img src="../assets/simulated_events.gif" alt="Sensor Model" style="width: 100%; height: auto;">
     <i style="display: block; text-align: left;">temp1 </i>
