@@ -10,7 +10,10 @@ header:
   teaser: /assets/EC.gif
 ---
 
-In this project, the Prophesee EVK4, an event-based camera based on the IMX636ES HD sensor developed in collaboration between Sony and Prophesee, was used to create a proof of concept for a 3-D cube tracking system. Hough space shape detection was employed to track cube edges, and an optimization-based algorithm determined the cube pose. A ghosting effect was observed on the trailing event edges, and a sensor simulation model was developed to investigate this phenomenon.
+In this project, the Prophesee EVK4, an event-based camera based on the IMX636ES HD sensor developed in collaboration between Sony and Prophesee, was used towards developing an object tracker in 2D and 3D. 
+Hough space transformations were utilized to fit circles and lines to event data streams. An optimization-based algorithm was developed for determining cube poses.
+
+In this process, a ghosting effect was observed on the trailing event edges, and a sensor simulation model was developed to investigate this phenomenon.
 
 ## What are event cameras?
 Event cameras are vision sensors that capture changes in light intensity at each pixel as they occur, instead of capturing frames at a fixed rate like traditional cameras. Each detected change, or "event," includes a timestamp, pixel location, and polarity, indicating whether the intensity increased or decreased. This asynchronous operation enables them to capture high-speed activity with sub-millisecond latency and minimal motion blur.
@@ -38,16 +41,11 @@ A sensor model was developed to investigate the ghosting issues seen in the even
     <i style="display: block; text-align: left;">Abstract schematic of the IMX-636ES sensor at the pixel level. Taken from <a href="https://www.prophesee.ai/event-camera-evk4/">Prophesee</a></i>
 </div>
 
-One key thing to note about the schematic above is that the analog sensor takes time to
-charge and discharge at the pixel level. This reality limits how quickly events can be generated
-relative to changes in incident brightness. Although an ideal event camera has no motion blur,
-this idealization breaks down in certain situations because of the sensor’s inevitable analog
+One key thing to note about the schematic above is that the analog sensor takes time to charge and discharge at the pixel level. This reality limits how quickly events can be generated relative to changes in incident brightness. Although an ideal event camera has no motion blur, this idealization breaks down in certain situations because of the sensor’s inevitable analog
 limitations.
 
-We suspected that this charging and discharging had an associated time constant similar
-in nature to a first-order RC circuit. To replicate this effect, we passed incident light intensity
-data through a first-order low-pass filter, which acted to smooth out the input signal in the time
-domain. A first-order Butterworth filter was chosen to preserve the accuracy of the input given
+We suspected that this charging and discharging had an associated time constant similar in nature to a first-order RC circuit. To replicate this effect, we passed incident light intensity
+data through a first-order low-pass filter, which acted to smooth out the input signal in the time domain. A first-order Butterworth filter was chosen to preserve the accuracy of the input given
 its relatively flat passband. 
 
 To test if the sensor’s analog limitations were responsible for the ghosting, the sensor model was made to be tested on synthetic light intensity data: a rectangle moving across the image space. The Butterworth filter was then applied to the intensity data, and the logarithm of the result was taken to get the voltage. Events were then fired probabilistically based on the difference between the reference and actual voltage. The results of the sensor model were promising:
@@ -58,16 +56,20 @@ To test if the sensor’s analog limitations were responsible for the ghosting, 
     <i style="display: block; text-align: left;"> Event camera simulation, showing (top to bottom) light intensity, filtered intensity, intensity as voltage, reference voltage, voltage differences, and generated events (positive in white, negative in gray).</i>
 </div>
 
+## Hough line detector on an event data stream
+Since our end goal was tracking a cube, we developed a line detector from events using the Hough transform once again; the idea being that each event can be used as a vote for a subset of lines parameterized by (r,θ). Within an accumulator, the index with the most votes is chosen as the best line. Nearby maxima are ignored (non-maximum suppression) to avoid duplicate detections.
 
-<!-- <!-- <div style="text-align: center; width: 70%; margin: 0 auto;">
-    <img src="/assets/cube_events.gif" alt="Rubiks cube" style="width: 100%; height: auto;">
-    <i style="display: block; text-align: left;">temp1 </i>
-</div> -->
+ <div style="text-align: center; width: 70%; margin: 0 auto;">
+    <img src="/assets/images/hough_accumulator.png" alt="Rubiks cube" style="width: 100%; height: auto;">
+    <i style="display: block; text-align: left;"> Left: Parametric representation of a line Right: Visualization of the Hough space </i>
+</div> 
  
-
-
-
-## Hough line detector
+With this, we were able to move a Rubik's cube (with many distinct lines) horizontally across a scene, and detect lines from its outer and inner edges. Horizontal edges are not detected since the cube is moving horizontally; there are no intensity changes to generate events in that axis.
 <!-- overlay rubix cube over gif -->
+ <div style="text-align: center; width: 70%; margin: 0 auto;">
+    <img src="/assets/cube_events.gif" alt="Rubiks cube" style="width: 100%; height: auto;">
+    <i style="display: block; text-align: left;"> Hough line detector demo. Top left: Hough space with green circles indicating local maxima and neighborhood size. Bottom right: Rubiks cube being moved across the scene. The white dots are the events, and blue lines the fitted edges using the Hough detector.</i>
+</div> 
+ 
 
 ## Optimization and Cube Tracking
