@@ -59,9 +59,18 @@ To test if the sensor’s analog limitations were responsible for the ghosting, 
 ## Hough line detector on an event data stream
 Since our end goal was tracking a cube, we developed a line detector from events using the Hough transform once again; the idea being that each event can be used as a vote for a subset of lines parameterized by (r,θ). Within an accumulator, the index with the most votes is chosen as the best line. Nearby maxima are ignored (non-maximum suppression) to avoid duplicate detections.
 
+Pseudocode:
+```
+For each event (x, y):
+    For each angle θ:
+        r = x * cos(θ) + y * sin(θ)
+        acc[r][θ] += 1
+```
+
+
  <div style="text-align: center; width: 70%; margin: 0 auto;">
     <img src="/assets/images/hough_accumulator.png" alt="Rubiks cube" style="width: 100%; height: auto;">
-    <i style="display: block; text-align: left;"> Left: Parametric representation of a line Right: Visualization of the Hough space </i>
+    <i style="display: block; text-align: left;"> Left: Parametric representation of a line Right: Visualization of the Hough space accumulator </i>
 </div> 
  
 With this, we were able to move a Rubik's cube (with many distinct lines) horizontally across a scene, and detect lines from its outer and inner edges. Horizontal edges are not detected since the cube is moving horizontally; there are no intensity changes to generate events in that axis.
