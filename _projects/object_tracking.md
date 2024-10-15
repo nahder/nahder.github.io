@@ -59,7 +59,6 @@ To test if the sensor’s analog limitations were responsible for the ghosting, 
 ## Hough line detector on an event data stream
 Since our end goal was tracking a cube, we developed a line detector from events using the Hough transform once again; the idea being that each event can be used as a vote for a subset of lines parameterized by (r,θ). Within an accumulator, the index with the most votes is chosen as the best line. Nearby maxima are ignored (non-maximum suppression) to avoid duplicate detections.
 
-Pseudocode:
 ```
 For each event (x, y):
     For each angle θ:
@@ -79,6 +78,25 @@ With this, we were able to move a Rubik's cube (with many distinct lines) horizo
     <img src="/assets/cube_events.gif" alt="Rubiks cube" style="width: 100%; height: auto;">
     <i style="display: block; text-align: left;"> Hough line detector demo. Top left: Hough space with green circles indicating local maxima and neighborhood size. Bottom right: Rubiks cube being moved across the scene. The white dots are the events, and blue lines the fitted edges using the Hough detector.</i>
 </div> 
- 
 
-## Optimization and Cube Tracking
+## 3-dimensional tracking
+
+Explanation incoming...
+```
+result = minimize(objective, x0, args=(lines, object_points, method=Powell))
+
+def objective(x, lines, object_points):
+    rvec = x[:3]
+    tvec = x[3:]
+
+    image_points = cv2.project_points(rvec, tvec, object_points) 
+    sum_dists = 0
+
+    for point in image_points:
+        min_dist = np.inf
+        for line in lines:
+            dist = abs(np.dot(line, np.append(point,1)))
+            min_dist = min(min_dist, dist)
+        sum_dists += min_dist**2
+return sum_dists
+```
