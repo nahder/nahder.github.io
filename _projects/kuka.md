@@ -4,7 +4,7 @@ author_profile: true
 excerpt: |
   • Trajectory planning <br>
   • Feedback control <br>
-key: 6
+key: 7
 header:
   teaser: /assets/kuka.gif
 ---
