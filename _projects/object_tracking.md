@@ -79,17 +79,24 @@ With this, we were able to move a Rubik's cube (with many distinct lines) horizo
     <i style="display: block; text-align: left;"> Hough line detector demo. Top left: Hough space with green circles indicating local maxima and neighborhood size. Bottom right: Rubiks cube being moved across the scene. The white dots are the events, and blue lines the fitted edges using the Hough detector.</i>
 </div> 
 
-## 3-dimensional tracking
+## Optimization-based 3D tracking
 
-Explanation incoming...
+We used OpenCV's `projectPoints` to connect 3D object poses with 2D image points. Our goal was to leverage the inverse problem: determine the unknown 3D pose of a Rubik’s cube by minimizing the distance between the projected points and the Hough lines. 
+
+The optimization used:
+
+- Known object points of the Rubik’s cube. 
+- Camera intrinsics, calibrated via a blinking checkerboard to generate events. <a href="https://docs.prophesee.ai/stable/samples/modules/calibration/calibration_pipeline.html#chapter-samples-calibration-calibration-pipeline" target="_blank">We used the Metavision SDK to achieve this.</a>
+- An initial guess for the 3D pose.
+
+The objective function calculates the sum of squared distances between each projected point and the nearest detected Hough line:
+
 ```
-result = minimize(objective, x0, args=(lines, object_points, method=Powell))
-
 def objective(x, lines, object_points):
     rvec = x[:3]
     tvec = x[3:]
 
-    image_points = cv2.project_points(rvec, tvec, object_points) 
+    image_points = cv2.projectPoints(rvec, tvec, object_points, cameraMatrix) 
     sum_dists = 0
 
     for point in image_points:
@@ -99,4 +106,32 @@ def objective(x, lines, object_points):
             min_dist = min(min_dist, dist)
         sum_dists += min_dist**2
 return sum_dists
+
+result = minimize(objective, x0, args=(lines, object_points, method=Powell))
 ```
+We then used SciPy to find the values of `x` which minimize the objective function. We opted to use the Powell method because it does not require the function to be differentiable. In doing this,
+we found the rotation and translation vectors which, when used for projecting from 3D to 2D, would yield image points along our Hough lines.
+
+## Tracking Simulation
+Up to this point, we had developed a method for obtaining the pose of the cube given some initial guess for it. The concern we sought to address, however, was whether or not our optimization results for arbitrary initial guesses were accurate. We thus developed a simulation with synthetic data to test if the cube was trackable while moving.
+
+As seen in the first trial, the optimized points did not line up with the perturbed ones. We then attempted adding three additional object points in between the corners and found success: our optimizer was able to discover the pose corresponding with the correct projection despite the perturbations from the initial guess. It made the optimization a bit more specific in that it now restricted corner points to line intersections and middle points to just the lines themselves. 
+
+<div style="text-align: center; width: 100%; margin: 0 auto;">
+    <img src="/assets/images/cubetrack_sidebyside.png" alt="Cube tracking side by side" style="width: 100%; height: auto;">
+    <br><br>
+    <i style="display: block; text-align: left; margin-bottom: 20px;">
+        <span style="color: green; font-weight: bold;">Green circles:</span> Initial points projected using an initial guess for the pose. <br>
+        <span style="color: red; font-weight: bold;">Red circles:</span> Points projected using the true 3D pose with a small amount of Gaussian noise added. <br>
+        <span style="color: purple; font-weight: bold;">Purple circles:</span> Points projected using the optimized cube pose.
+    </i>
+</div>
+
+Overall, this indicated that the pose could be calculated in a live cube-tracking application, where the previously estimated pose is fed in as a guess for the current. This hinges on the requirement that the movement between frames is not exceedingly high. 
+
+###  Future Work
+The tracking simulation shows that our event-based Hough line detector can be integrated with our optimizer to compute the 3D pose of the cube in a frame-by-frame manner. The next steps would involve integrating these features and testing with a live event data stream.
+
+### Acknowledgements:
+Thanks to Rezwhan Kamal, Professor Matthew Zucker, Professor Stephen Phillips for collaboration and guidance.
+
