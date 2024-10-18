@@ -11,6 +11,7 @@ header:
   teaser: /assets/slam1.gif
 
 ---
+
 This project involved implementing Extended Kalman Filter (EKF) for Simultaneous Localization and Mapping (SLAM) on a TurtleBot3 using C++ with ROS2. 
 
 ## EKF SLAM Video Demo
