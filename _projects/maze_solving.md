@@ -8,7 +8,7 @@ excerpt: |
 
 # excerpt:
 #  Djikstra's Algorithm, LiDAR-based pose correction.
-key: 10
+key: 6
 header:
   teaser: /assets/maze.gif
 

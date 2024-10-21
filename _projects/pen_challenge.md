@@ -4,7 +4,7 @@ author_profile: true
 excerpt: |
   • Blob tracking <br>
   • Pick and place <br>
-key: 6
+key: 5
 header:
   teaser: /assets/pen.gif
 

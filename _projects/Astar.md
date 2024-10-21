@@ -4,7 +4,7 @@ author_profile: true
 excerpt: |
   • Unknown search space <br>
   • Pathfinding & obstacle avoidance<br>
-key: 4
+key: 8
 header:
   teaser: /assets/Astar.gif
 ---

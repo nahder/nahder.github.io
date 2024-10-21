@@ -5,7 +5,7 @@ excerpt: "Pure Pursuit, proportional control."
 excerpt: |
   • Rapidly Exploring Random Trees <br>
   • Obstacle avoidance
-key: 6
+key: 7
 header:
   teaser: /assets/RRT2.gif
 ---
