@@ -118,45 +118,19 @@ defaults:
       type: projects
     values:
       layout: single
-
   - scope:
       path: ""
-      type: manipulation_projects
+      type: coming_soon
     values:
       layout: single
 
-  - scope:
-      path: ""
-      type: nav_projects
-    values:
-      layout: single
 
-  - scope:
-      path: ""
-      type: turtlebot_projects
-    values:
-      layout: single
-
-  - scope:
-      path: ""
-      type: vision_projects
-    values:
-      layout: single
 
 collections:
-  turtlebot_projects: 
-    output: true 
-    permalink: /:collection/:path/
-  vision_projects: 
-    output: true 
-    permalink: /:collection/:path/  
-  manipulation_projects: 
-    output: true 
-    permalink: /:collection/:path/
-  nav_projects:
-    output: true 
-    permalink: /:collection/:path/
   projects:
+    output: true 
+    permalink: /:collection/:path/
+  coming_soon:
     output: true 
     permalink: /:collection/:path/
 

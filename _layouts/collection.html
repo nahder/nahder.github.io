@@ -3,17 +3,45 @@ layout: archive
 ---
 
 <style>
+  /* Styling for horizontal rule (hr) */
   hr {
-      margin: 0;
-      padding: 0.3em;
-      border: none;
-      border-top: 0.10px solid #696767; 
+      margin: 0;  /* No margin around the line */
+      padding: 0.3em;  /* Small padding above and below the line */
+      border: none;  /* No visible border */
+      border-top: 0.10px solid #696767;  /* A thin, top border for the line */
   }
 </style>
 
+<!-- Main content output from the current page/post -->
 {{ content }}
 
+<!-- Section Title: Projects -->
+<h2
+  style="
+    text-align: left;  /* Align text to the left */
+    color: #ffffff;  /* White font color */
+    font-family: Futura, Arial, monospace;  /* Set font family */
+    text-transform: uppercase;  /* Capitalize all letters */
+    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);  /* Create a soft shadow effect */
+    margin-top: 0em;  /* No margin on top */
+    margin-bottom: 0.4em;  /* Small margin at the bottom */
+  "
+>
+  Projects
+</h2>
 
+<!-- Determine the layout for the project entries (block or grid), defaults to 'block' if not set -->
+{% assign entries_layout = page.entries_layout | default: 'block' %}
+
+<!-- Display project collection using the selected layout -->
+<div class="entries-{{ entries_layout }}">
+  {% include documents-collection.html collection=page.projects_collection
+  sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
+</div>
+
+<div class="clearfix"></div>  <!-- Clear floats to prevent overlapping content -->
+
+<!-- Section Title: Coming Soon -->
 <h2
   style="
     text-align: left;
@@ -25,83 +53,14 @@ layout: archive
     margin-bottom: 0.4em;
   "
 >
-  Projects
+  Coming Soon!
 </h2>
-<!-- <hr> -->
-{% assign entries_layout = page.entries_layout | default: 'block' %}
-<!-- <div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.manipulation_collection
-  sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
-</div> -->
 
+<div class="clearfix"></div> <!-- Clear floats again before the new section -->
+<hr /> <!-- Horizontal line separating sections -->
+
+<!-- Display 'Coming Soon' collection using the same layout -->
 <div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.projects_collection
+  {% include documents-collection.html collection=page.coming_soon_collection
   sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
 </div>
-
-<!-- <div class="clearfix"></div>
-<hr /> -->
-<!-- 
-<h2
-  style="
-    text-align: left;
-    color: #ffffff;
-    font-family: Futura, Arial, monospace;
-    text-transform: uppercase;
-    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
-    margin-top: 0em;
-    margin-bottom: 0.1em;
-  "
->
-  NAVIGATION & PLANNING
-</h2>
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.nav_collection
-  sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
-</div>
-<!-- clear fix to ensure the next content appears below the floated elements -->
-<!-- <div class="clearfix"></div>
-<hr />  -->
-
-
-
-<!-- <h2
-  style="
-    text-align: left;
-    color: #ffffff;
-    font-family: Futura, Arial, monospace;
-    text-transform: uppercase;
-    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
-    margin-top: 0em;
-    margin-bottom: 0.1em;
-  "
->
-  COMPUTER VISION
-</h2>
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.vision_collection
-  sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
-</div>
-
-<div class="clearfix"></div>
-<hr /> -->
-
-<!-- 
-<h2
-  style="
-    text-align: left;
-    color: #ffffff;
-    font-family: Futura, Arial, monospace;
-    text-transform: uppercase;
-    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
-    margin-top: 0em;
-    margin-bottom: 0.1em;
-  "
->
-  TURTLEBOT FUN!
-</h2>
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.turtle_collection
-  sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
-</div>
-<div class="clearfix"></div> -->
