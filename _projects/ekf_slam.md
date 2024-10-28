@@ -8,7 +8,7 @@ excerpt: |
 
 key: 5
 header:
-  teaser: /assets/slam1.gif
+  teaser: /assets/SLAM3.gif
 
 ---
 
