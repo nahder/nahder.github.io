@@ -30,11 +30,12 @@ As this was done from scratch, several packages were developed:
 
 
 <!-- ## System Diagram -->
+## EKF SLAM Video Demo
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/rSsrFGA5-VM?si=lT8k8OgqHdANpth9" title="Turtlebot ROS2 Controller + Odometry Movement Demo " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Movement Demo
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/A6Nuhwcevig?si=f-d0e8cCbUXAU8Zg" title="Turtlebot ROS2 Controller + Odometry Movement Demo " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## EKF SLAM Video Demo
-Coming soon...
+Physical SLAM testing coming soon! 
 
 Check out the project &#8594; <a href="https://github.com/ME495-Navigation/slam-project-nahder" class="github-button" target="_blank">GitHub</a>
