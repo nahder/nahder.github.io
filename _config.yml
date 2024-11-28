@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Nader Ahmed"
   avatar : "/assets/images/nader.jpg"
-  bio    : "M.S. in Robotics from Northwestern University. Currently looking for new opportunities!"
+  bio    : "M.S. in Robotics from Northwestern University"
   links:
     - label: "Evanston, IL"
       icon: "fas fa-map-pin" 
