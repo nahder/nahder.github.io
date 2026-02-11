@@ -1,0 +1,64 @@
+---
+layout: valentine
+permalink: /invoke-chaos/
+sitemap: false
+search: false
+---
+
+<!-- Screen 1: Password Gate -->
+<div id="password-screen">
+  <div class="medallion-container">
+    <div class="medallion"></div>
+  </div>
+
+  <div class="gate-text">
+    <h2>This area is protected by ancient magic</h2>
+    <p>Speak the sorcerer's name to enter</p>
+  </div>
+
+  <div class="input-group">
+    <input type="text" id="password-input" placeholder="Enter the name..." autocomplete="off" spellcheck="false">
+    <button id="cast-btn">Cast</button>
+  </div>
+
+  <p class="error-msg" id="error-msg"></p>
+
+  <div class="potion potion-left"></div>
+  <div class="potion potion-right"></div>
+</div>
+
+<!-- Screen 2: Platformer Game -->
+<div id="game-screen">
+  <canvas id="game-canvas"></canvas>
+  <div class="touch-controls" id="touch-controls">
+    <div class="touch-left-group">
+      <button class="touch-btn" id="touch-left">&#9664;</button>
+      <button class="touch-btn" id="touch-right">&#9654;</button>
+    </div>
+    <div class="touch-right-group">
+      <button class="touch-btn" id="touch-interact">E</button>
+      <button class="touch-btn" id="touch-jump">&#9650;</button>
+    </div>
+  </div>
+</div>
+
+<!-- Screen 3: Valentine Reward -->
+<div id="reveal-screen">
+  <div class="reveal-text">
+    <div class="reveal-subtitle">The seal is broken... a message appears:</div>
+    <div class="reveal-name">Fatima</div>
+    <div class="reveal-question">Will you be my Valentine?</div>
+    <div class="reveal-signed">- Nader</div>
+  </div>
+
+  <div class="couple-container">
+    <div class="geralt"></div>
+    <div class="pixel-heart-center"></div>
+    <div class="yennefer"></div>
+  </div>
+
+  <div class="plans-section">
+    <h3>Our Valentine's Day Plans</h3>
+    <p>[Your Valentine's Day plans here]</p>
+  </div>
+</div>

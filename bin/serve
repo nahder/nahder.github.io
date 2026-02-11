@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Serve the Jekyll site locally with live reload.
+# One-time setup: install Ruby + Bundler, then run: bundle install
+set -e
+cd "$(dirname "$0")/.."
+if ! command -v bundle &>/dev/null; then
+  echo "Bundler not found. Install Ruby and Bundler first (see SERVING.md)."
+  exit 1
+fi
+exec bundle exec jekyll serve --livereload
