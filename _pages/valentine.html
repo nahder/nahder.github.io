@@ -7,10 +7,6 @@ search: false
 
 <!-- Screen 1: Password Gate -->
 <div id="password-screen">
-  <div class="medallion-container">
-    <div class="medallion"></div>
-  </div>
-
   <div class="gate-text">
     <h2>This area is protected by ancient magic</h2>
     <p>Speak the sorcerer's name to enter</p>
@@ -22,9 +18,6 @@ search: false
   </div>
 
   <p class="error-msg" id="error-msg"></p>
-
-  <div class="potion potion-left"></div>
-  <div class="potion potion-right"></div>
 </div>
 
 <!-- Screen 2: Platformer Game -->
@@ -45,16 +38,16 @@ search: false
 <!-- Screen 3: Valentine Reward -->
 <div id="reveal-screen">
   <div class="reveal-text">
-    <div class="reveal-subtitle">The seal is broken... a message appears:</div>
+    <div class="reveal-subtitle">A message was hidden inside...</div>
     <div class="reveal-name">Fatima</div>
     <div class="reveal-question">Will you be my Valentine?</div>
     <div class="reveal-signed">- Nader</div>
   </div>
 
   <div class="couple-container">
-    <div class="geralt"></div>
+    <canvas id="reveal-player" class="reveal-sprite" width="28" height="36"></canvas>
     <div class="pixel-heart-center"></div>
-    <div class="yennefer"></div>
+    <canvas id="reveal-boy" class="reveal-sprite" width="28" height="36"></canvas>
   </div>
 
   <div class="plans-section">
