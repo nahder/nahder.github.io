@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Terminal skin — deep navy + cyan
+   ========================================================================== */
+
+$background-color:            #1e2330 !default;
+$text-color:                  #cdd6f4 !default;
+$primary-color:               #89dceb !default;
+$border-color:                #2a3045 !default;
+$code-background-color:       #191e2b !default;
+$code-background-color-dark:  #161b27 !default;
+$form-background-color:       #191e2b !default;
+$footer-background-color:     #161b27 !default;
+$link-color:                  #89dceb !default;
+$link-color-hover:            #b4edf6 !default;
+$link-color-visited:          #68b5c4 !default;
+$masthead-link-color:         #a0aec0 !default;
+$masthead-link-color-hover:   #89dceb !default;
+$navicon-link-color-hover:    mix(#000, $background-color, 30%) !default;
+
+/* ==========================================================================
+   FONT PICKER — uncomment one $sans-serif line and one $monospace line.
+   All fonts are preloaded in _includes/head/custom.html so no other
+   changes are needed. Jekyll rebuild picks up the change automatically.
+   ========================================================================== */
+
+/* -- Body / heading font (pick one) --------------------------------------- */
+$sans-serif: 'DM Sans', sans-serif !default;           // current: clean, neutral
+// $sans-serif: 'Inter', sans-serif !default;           // very clean, popular in SaaS
+// $sans-serif: 'Outfit', sans-serif !default;          // geometric, slightly playful
+// $sans-serif: 'Space Grotesk', sans-serif !default;   // technical-feeling grotesque
+// $sans-serif: 'Plus Jakarta Sans', sans-serif !default; // polished, professional
+// $sans-serif: 'Syne', sans-serif !default;            // editorial, more artistic
+// $sans-serif: 'Bricolage Grotesque', sans-serif !default; // chunky, high personality
+
+/* -- Monospace accent font (prompts, tags, paths, code) (pick one) -------- */
+// $monospace: 'JetBrains Mono', monospace !default;      // current: popular dev font
+// $monospace: 'IBM Plex Mono', monospace !default;     // more refined, editorial feel
+$monospace: 'Space Mono', monospace !default;        // distinctive, pairs with Space Grotesk
+// $monospace: 'DM Mono', monospace !default;           // minimal, pairs well with DM Sans
+// $monospace: 'Fira Code', monospace !default;         // ligatures, very readable
+// $monospace: 'Inconsolata', monospace !default;       // compact, classic terminal
+
+/* ------------------------------------------------------------------------- */
+$sans-serif-narrow: $sans-serif !default;
+$global-font-family: $sans-serif !default;
+$header-font-family: $sans-serif !default;
+
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: $form-background-color;
+}
+
+.github-button {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: #0d1320;
+  color: #89dceb;
+  border: 1px solid #1e2a3a;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.875em;
+  font-family: $monospace;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #89dceb;
+    color: #b4edf6;
+    background-color: rgba(137, 220, 235, 0.08);
+  }
+}

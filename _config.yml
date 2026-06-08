@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Graduate student in robotics at Northwestern University.
 twitter_username: username
 github_username: nahder
-minimal_mistakes_skin: dark
+minimal_mistakes_skin: terminal
 search: true
 
 # Build settings
@@ -57,14 +57,11 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Nader Ahmed"
-  avatar : "/assets/images/nader.jpg"
-  bio    : "M.S. in Robotics from Northwestern University"
+  name     : "Nader Ahmed"
+  avatar   : "/assets/images/nader.jpg"
+  bio      : "M.S. Robotics, Northwestern University."
+  location : "New York City"
   links:
-    - label: "Evanston, IL"
-      icon: "fas fa-map-pin" 
-      url: ""
-
     - label: "Email"
       icon: "fas fa-inbox"
       url: "mailto:nahmed5150@gmail.com"

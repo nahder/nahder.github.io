@@ -1,5 +1,5 @@
 main:
-  # - title: "About"
-  #   url: /about/
-  # - title: "Resume" 
-  #   url:
+  - title: "projects"
+    url: /
+  - title: "contact"
+    url: "mailto:nahmed5150@gmail.com"

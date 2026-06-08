@@ -1,66 +1,72 @@
 ---
-layout: archive
+layout: default
+author_profile: true
 ---
 
-<style>
-  /* Styling for horizontal rule (hr) */
-  hr {
-      margin: 0;  /* No margin around the line */
-      padding: 0.3em;  /* Small padding above and below the line */
-      border: none;  /* No visible border */
-      border-top: 0.10px solid #696767;  /* A thin, top border for the line */
-  }
-</style>
+<div id="main" role="main">
+  {% include sidebar.html %}
 
-<!-- Main content output from the current page/post -->
-{{ content }}
+  <div class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content">
 
-<!-- Section Title: Projects -->
-<h2
-  style="
-    text-align: left;  /* Align text to the left */
-    color: #ffffff;  /* White font color */
-    font-family: Futura, Arial, monospace;  /* Set font family */
-    text-transform: uppercase;  /* Capitalize all letters */
-    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);  /* Create a soft shadow effect */
-    margin-top: 0em;  /* No margin on top */
-    margin-bottom: 0.4em;  /* Small margin at the bottom */
-  "
->
-  Projects
-</h2>
+        <div class="terminal-section-header">
+          <span class="t-sep">$</span><span class="t-cmd"> ls projects/</span>
+        </div>
 
-<!-- Determine the layout for the project entries (block or grid), defaults to 'block' if not set -->
-{% assign entries_layout = page.entries_layout | default: 'block' %}
+        <div class="project-grid">
+          {% assign projects = site.projects | sort: 'key' %}
+          {% for project in projects %}
+          <a href="{{ project.url | relative_url }}" class="project-card">
+            {% if project.header.teaser %}
+            <div class="project-card__media">
+              <img src="{{ project.header.teaser | relative_url }}" alt="{{ project.title }}" loading="lazy">
+            </div>
+            {% endif %}
+            <div class="project-card__body">
+              <h3 class="project-card__title">{{ project.title }}</h3>
+              {% if project.excerpt %}
+              <div class="project-card__tags">
+                {% assign raw_excerpt = project.excerpt | strip_html | strip %}
+                {% assign tag_lines = raw_excerpt | split: "•" %}
+                {% for tag_line in tag_lines %}
+                  {% assign tag = tag_line | strip %}
+                  {% if tag != "" %}
+                    <span class="project-card__tag">{{ tag }}</span>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </a>
+          {% endfor %}
+        </div>
 
-<!-- Display project collection using the selected layout -->
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.projects_collection
-  sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
-</div>
+        {% assign coming = site.coming_soon %}
+        {% if coming.size > 0 %}
+        <div class="terminal-section-header" style="margin-top: 2.5rem;">
+          <span class="t-sep">$</span><span class="t-cmd"> ls coming_soon/</span>
+        </div>
 
-<div class="clearfix"></div>  <!-- Clear floats to prevent overlapping content -->
-<hr />
+        <div class="project-grid">
+          {% assign coming_sorted = coming | sort: 'key' %}
+          {% for project in coming_sorted %}
+          <a href="{{ project.url | relative_url }}" class="project-card project-card--coming-soon">
+            {% if project.header.teaser %}
+            <div class="project-card__media">
+              <img src="{{ project.header.teaser | relative_url }}" alt="{{ project.title }}" loading="lazy">
+            </div>
+            {% endif %}
+            <div class="project-card__body">
+              <h3 class="project-card__title">{{ project.title }}</h3>
+              <span class="project-card__status">[coming soon]</span>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
 
-<!-- Section Title: Coming Soon -->
-<h2
-  style="
-    text-align: left;
-    color: #ffffff;
-    font-family: Futura, Arial, monospace;
-    text-transform: uppercase;
-    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
-    margin-top: 0em;
-    margin-bottom: 0.4em;
-  "
->
-  Coming Soon!
-</h2>
-
-<div class="clearfix"></div> <!-- Clear floats again before the new section -->
-
-<!-- Display 'Coming Soon' collection using the same layout -->
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection=page.coming_soon_collection
-  sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
+      </section>
+    </div>
+  </div>
 </div>
