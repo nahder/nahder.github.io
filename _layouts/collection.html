@@ -10,9 +10,7 @@ author_profile: true
     <div class="page__inner-wrap">
       <section class="page__content">
 
-        <div class="terminal-section-header">
-          <span class="t-sep">$</span><span class="t-cmd"> ls projects/</span>
-        </div>
+        <h2 class="section-heading">Projects</h2>
 
         <div class="project-grid">
           {% assign projects = site.projects | sort: 'key' %}
@@ -44,9 +42,7 @@ author_profile: true
 
         {% assign coming = site.coming_soon %}
         {% if coming.size > 0 %}
-        <div class="terminal-section-header" style="margin-top: 2.5rem;">
-          <span class="t-sep">$</span><span class="t-cmd"> ls coming_soon/</span>
-        </div>
+        <h2 class="section-heading section-heading--spaced">Coming Soon</h2>
 
         <div class="project-grid">
           {% assign coming_sorted = coming | sort: 'key' %}
